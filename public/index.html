@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energy and Environment Conservation Club</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Enhanced initial loading animation with KEC focus */
+        .kec-splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease-out;
+        }
+        
+        .kec-splash-content {
+            text-align: center;
+            animation: fadeInScale 1.5s ease-out forwards;
+        }
+        
+        .kec-splash h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .kec-splash .subtext {
+            font-size: 1.2rem;
+            color: #333;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+        }
+        
+        @keyframes fadeInScale {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        /* Hide the regular loader initially */
+        .eec-loader {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- KEC Splash Screen -->
+<div class="kec-splash" id="kecSplash">
+    <div class="kec-splash-content">
+        <h1>KONGU ENGINEERING COLLEGE</h1>
+        <p class="subtext">Energy & Environment Conservation Club</p>
+    </div>
+</div>
+
+<!-- Regular Loader (will be shown after splash) -->
+<div class="eec-loader">
+    <div class="eec-loader-inner">
+        <div class="eec-loader-circle"></div>
+        <div class="eec-loader-circle"></div>
+        <div class="eec-loader-circle"></div>
+        <div class="eec-leaf"><i class="fas fa-leaf"></i></div>
+    </div>
+</div>
+
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="navbar-container">
+        <div class="logo">
+            <a href="#home">
+                <span class="logo-text">KONGU ENGINEERING COLLEGE </span>
+                
+            </a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active hover-effect-1">Home</a></li>
+            <li><a href="#about" class="nav-link hover-effect-1">About Us</a></li>
+            <li>
+                <a href="#events" class="nav-link hover-effect-1" id="blink-circle-link">
+                    Events
+                    <span class="blink-circle"></span>
+                </a>
+            </li>
+            <style>
+                /* Blinking circle next to Events nav link */
+                .blink-circle {
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    margin-left: 8px;
+                    border-radius: 50%;
+                    background: #4caf50;
+                    vertical-align: middle;
+                    animation: blinkCircle 1s infinite;
+                    box-shadow: 0 0 8px #4caf5066;
+                }
+                @keyframes blinkCircle {
+                    0%, 100% { opacity: 1; }
+                    50% { opacity: 0.2; }
+                }
+            </style>
+            <li><a href="gallery.html" class="nav-link hover-effect-1">Gallery</a></li>
+        </ul>
+        <button class="nav-toggle" id="mobileMenu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <video class="hero-bg-video" autoplay muted loop playsinline>
+        <source src="./assets/videos/Home.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1>Energy & Environment <span class="highlight">Conservation Club</span></h1>
+        <p>Creating a sustainable future through collective action and environmental awareness</p>
+        <div class="cta-buttons">
+            <a href="#initiatives" class="btn btn-primary">Our Initiatives</a>
+            <a href="#join" class="btn btn-secondary">Join Us</a>
+        </div>
+    </div>
+    <div class="hero-scroll-indicator">
+        <a href="#about">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="section about-section modern-about">
+    <div class="container about-center">
+        <div class="about-header">
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
+                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">About </span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Us</span>
+            </h2>
+            <div class="underline"></div>
+        </div>
+        <div class="about-main-text">
+            <p>
+                The <strong>Energy and Environment Conservation Club</strong> is a passionate community of students and faculty committed to making a real difference for our planet. Since our founding, we have worked tirelessly to promote sustainability, environmental awareness, and responsible resource use within our college and the wider community.
+            </p>
+            <p>
+                Through workshops, campaigns, and hands-on projects, we empower individuals to adopt eco-friendly habits and inspire collective action. Our initiatives range from large-scale tree plantation drives and campus clean-ups to educational seminars on renewable energy and waste management. We believe that every small step counts, and together, we can create a greener, healthier future for all.
+            </p>
+            <p>
+                Join us as we continue to grow, learn, and lead by example—because protecting the environment is not just a responsibility, but a shared journey.
+            </p>
+        </div>
+        <div class="about-stats-cards">
+            <div class="about-stat-card">
+                <div class="about-stat-icon"><i class="fas fa-users"></i></div>
+                <div class="about-stat-label">Active Members</div>
+                <div class="about-stat-value" data-count="50">0</div>
+            </div>
+            <div class="about-stat-card">
+                <div class="about-stat-icon"><i class="fas fa-calendar-check"></i></div>
+                <div class="about-stat-label">Events Organized</div>
+                <div class="about-stat-value" data-count="20">0</div>
+            </div>
+            <div class="about-stat-card tree-card">
+                <div class="about-stat-icon"><i class="fas fa-tree"></i></div>
+                <div class="about-stat-label">Total Trees Planted</div>
+                <div class="about-stat-value" data-count="500">0</div>
+                <div class="about-tree-note">and counting!</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Initiatives Section -->
+<section id="initiatives" class="section initiatives-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
+                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Our</span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Initiatives</span>
+            </h2>
+            <div class="underline"></div>
+        </div>
+        <div class="initiatives-grid">
+            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="initiative-icon">
+                    <i class="fas fa-solar-panel"></i>
+                </div>
+                <h3>Renewable Energy</h3>
+                <p>Promoting solar and wind energy adoption through campus installations and community education programs.</p>
+            </div>
+            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="initiative-icon">
+                    <i class="fas fa-recycle"></i>
+                </div>
+                <h3>Waste Management</h3>
+                <p>Implementing comprehensive recycling programs and organizing zero-waste campaigns on campus.</p>
+            </div>
+            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="initiative-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <h3>Reforestation</h3>
+                <p>Regular tree planting drives and maintenance of green spaces in and around campus.</p>
+            </div>
+            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="initiative-icon">
+                    <i class="fas fa-tint"></i>
+                </div>
+                <h3>Water Conservation</h3>
+                <p>Watershed management programs and initiatives to reduce water consumption in college facilities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Events Section -->
+<section id="events" class="section events-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
+                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Upcoming</span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Events</span>
+            </h2>
+            <div class="underline"></div>
+        </div>
+        <div class="events-timeline-modern">
+            <div class="event-card-modern" data-aos="fade-up" data-aos-delay="100">
+                <div class="event-date-modern">
+                    <span class="date-day-modern">25</span>
+                    <span class="date-month-modern">May</span>
+                </div>
+                <div class="event-content-modern">
+                    <h3>Campus Clean-up Drive</h3>
+                    <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> College Campus</p>
+                    <p class="event-time-modern"><i class="fas fa-clock"></i> 9:00 AM - 12:00 PM</p>
+                    <p class="event-description-modern">Join us for our monthly campus clean-up to maintain our beautiful college grounds.</p>
+                    <a href="404.html" class="btn btn-glass">Register</a>
+                </div>
+            </div>
+            <div class="event-card-modern" data-aos="fade-up" data-aos-delay="200">
+                <div class="event-date-modern">
+                    <span class="date-day-modern">10</span>
+                    <span class="date-month-modern">Jun</span>
+                </div>
+                <div class="event-content-modern">
+                    <h3>Sustainable Living Workshop</h3>
+                    <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> Seminar Hall</p>
+                    <p class="event-time-modern"><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
+                    <p class="event-description-modern">Learn practical tips for adopting a more sustainable lifestyle in your daily routine.</p>
+                    <a href="404.html" class="btn btn-glass">Register</a>
+                </div>
+            </div>
+            <div class="event-card-modern" data-aos="fade-up" data-aos-delay="300">
+                <div class="event-date-modern">
+                    <span class="date-day-modern">22</span>
+                    <span class="date-month-modern">Jun</span>
+                </div>
+                <div class="event-content-modern">
+                    <h3>World Environment Day Celebration</h3>
+                    <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> College Auditorium</p>
+                    <p class="event-time-modern"><i class="fas fa-clock"></i> 10:00 AM - 5:00 PM</p>
+                    <p class="event-description-modern">A full day of activities including seminars, competitions, and exhibitions celebrating our environment.</p>
+                    <a href="404.html" class="btn btn-glass">Register</a>
+                </div>
+            </div>
+        </div>
+        <div class="view-all-container" data-aos="fade-up">
+            <a href="404.html" class="btn btn-outlined btn-glass">View All Events</a>
+        </div>
+    </div>
+</section>
+
+<!-- Enhanced Gallery Section -->
+<div class="gallery-container">
+    <div class="gallery-track right">
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+    </div>
+</div>
+
+<div class="gallery-container">
+    <div class="gallery-track left">
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+        <div class="gallery-slide">
+            <img src="./assets/images/home2.jpg" alt="Gallery Image">
+        </div>
+    </div>
+</div>
+
+<div class="view-all-container" data-aos="fade-up">
+    <a href="gallery.html" class="btn btn-outlined btn-glass">View Gallery</a>
+</div>
+
+<!-- Team Section -->
+<section id="team" class="section team-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
+                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Meet Our</span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Faculty</span>
+            </h2>
+            <div class="underline"></div>
+        </div>
+        <div class="team-pillar-grid">
+            <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="./assets/images/home8.avif" alt="Alex Johnson" class="pillar-full-img">
+                <div class="pillar-overlay">
+                    <h3>Alex Johnson</h3>
+                    <p class="pillar-position">President</p>
+                </div>
+            </div>
+            <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="./assets/images/home9.jpg" alt="Samantha Park" class="pillar-full-img">
+                <div class="pillar-overlay">
+                    <h3>Samantha Park</h3>
+                    <p class="pillar-position">Vice President</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div style="max-width: 1400px; margin: 32px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(76,175,80,0.08); background: #fff; aspect-ratio: 9/4; display: flex; justify-content: center; align-items: center;"
+    data-aos="zoom-in" data-aos-duration="1200">
+    <img src="./assets/images/home1.jpg" alt="Group Photo" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+</div>
+
+<!-- Join Us Section -->
+<section id="join" class="section join-section">
+    <div class="container">
+        <div class="join-content">
+            <div class="join-text" data-aos="fade-right">
+                <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
+                    <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Join Our</span>
+                    <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Mission</span>
+                </h2>
+                <p>Become a part of our club and help us make a positive impact on our environment. Together, we can create a sustainable future for all.</p>
+                <ul class="benefits-list">
+                    <li><i class="fas fa-check-circle"></i> Hands-on environmental projects</li>
+                    <li><i class="fas fa-check-circle"></i> Leadership opportunities</li>
+                    <li><i class="fas fa-check-circle"></i> Networking with like-minded individuals</li>
+                    <li><i class="fas fa-check-circle"></i> Access to workshops and seminars</li>
+                </ul>
+            </div>
+            <div class="join-form" data-aos="fade-left">
+                <form id="membershipForm">
+                    <h3>Membership Application</h3>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                       <select id="department" name="department">
+                            <option value="" disabled selected hidden>Select Department</option>
+                            <option value="AIDS">AIDS</option>
+                            <option value="AIML">AIML</option>
+                            <option value="AUTO">AUTO</option>
+                            <option value="CHE">CHE</option>
+                            <option value="CIVIL">CIVIL</option>
+                            <option value="CSD">CSD</option>
+                            <option value="CSE">CSE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EIE">EIE</option>
+                            <option value="FT">FT</option>
+                            <option value="IT">IT</option>
+                            <option value="MECH">MECH</option>
+                            <option value="MTS">MTS</option>
+                            <option value="OTHER">OTHER</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <select id="year" name="year" required>
+                            <option value="" disabled selected>Year of Study</option>
+                            <option value="1">First Year</option>
+                            <option value="2">Second Year</option>
+                            <option value="3">Third Year</option>
+                            <option value="4">Fourth Year</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Why do you want to join our club?" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" style="position: relative;">
+                      Submit Application
+                      <div id="formLoader" class="form-loader" style="display:none; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);">
+                        <div class="loader-circle"></div>
+                      </div>
+                    </button>
+                </form>
+                <div id="formSuccess" style="display: none; text-align: center; margin-top: 20px;">
+                    <div class="form-success-checkmark">
+                        <svg viewBox="0 0 52 52">
+                            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #4CAF50; margin-top: 15px;">Application Submitted!</h3>
+                    <p>We'll get back to you soon.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="toast" class="toast"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-top glassy-footer">
+        <div class="container">
+            <div class="footer-grid" style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                <div class="footer-widget" style="max-width: 320px;">
+                    <div class="footer-logo">
+                        <span class="logo-text">EEC</span>
+                        <i class="fas fa-leaf logo-icon"></i>
+                    </div>
+                    <p class="footer-desc">
+                        The Energy and Environment Conservation Club is committed to promoting sustainable practices and creating a greener future for our campus and community.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-row-widgets" style="display: flex; gap: 40px;">
+                   
+                    <div class="footer-widget">
+                        <h3>Contact Us</h3>
+                        <ul class="footer-contact">
+                            <li><i class="fas fa-envelope"></i> <a href="mailto:eecclub@email.com">eecclub@email.com</a></li>
+                            <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=College+Campus,+City,+Country" target="_blank">College Campus, City, Country</a></li>
+                            <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom glassy-footer-bottom">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+            <p style="margin: 0;">&copy; 2025 <span class="logo-text">Energy and Environment Conservation Club</span>All Rights Reserved.</p>
+            <p style="margin: 0;">Website developed by <a href="https://sakthis30.web.app/" target="_blank" style="color: #4caf50;">SAKTHIVEL S</a></p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#home" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="./js/main.js"></script>
+
+
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Show KEC splash screen first
+    const kecSplash = document.getElementById('kecSplash');
+    const regularLoader = document.querySelector('.eec-loader');
+    
+    // After 2.5 seconds, fade out the KEC splash and show regular loader
+    setTimeout(() => {
+        kecSplash.style.opacity = '0';
+        
+        // After fade out completes, remove splash and show regular loader
+        setTimeout(() => {
+            kecSplash.style.display = 'none';
+            regularLoader.style.display = 'flex';
+            
+            // Then proceed with the rest of your page loading
+            setTimeout(() => {
+                regularLoader.style.opacity = '0';
+                setTimeout(() => {
+                    regularLoader.style.display = 'none';
+                    
+                    // Initialize AOS and other scripts after everything is loaded
+                    AOS.init({
+                        duration: 1000,
+                        easing: 'ease-out-quart',
+                        once: false,
+                        mirror: true,
+                        offset: 120,
+                        delay: 100,
+                        anchorPlacement: 'top-bottom',
+                        disable: function() {
+                            return window.innerWidth < 768;
+                        }
+                    });
+                }, 500);
+            }, 1000);
+        }, 800);
+    }, 2500);
+});
+</script>
+</body>
+</html>
