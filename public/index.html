@@ -10,7 +10,8 @@
   <meta name="google-site-verification" content="your-verification-code-here">
   
   <!-- Primary Meta Tags -->
-  <title>Energy & Environment Club (EECC) | Kongu Engineering College | Sustainable Campus Initiatives</title>
+<title>Energy & Environment Club (EECC)</title>
+<link rel="icon" href="./assets/images/logo 1.png" type="image/png">
   <meta name="description" content="Official EECC club at Kongu Engineering College. Leading student-driven sustainability projects, energy conservation programs, and green campus initiatives since 2023.">
   
   <!-- SEO Meta Tags -->
@@ -293,63 +294,272 @@
         </div>
     </div>
 </section>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2E7D32;
+            --accent-color: #8BC34A;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+    </style>
 
-<!-- Events Section -->
-<section id="events" class="section events-section">
-    <div class="container">
-        <div class="section-header" data-aos="fade-up">
-            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
-                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Upcoming</span>
-                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Events</span>
-            </h2>
-            <div class="underline"></div>
-        </div>
-        <div class="events-timeline-modern">
-            <div class="event-card-modern" data-aos="fade-up" data-aos-delay="100">
-                <div class="event-date-modern">
-                    <span class="date-day-modern">25</span>
-                    <span class="date-month-modern">May</span>
-                </div>
-                <div class="event-content-modern">
-                    <h3>Campus Clean-up Drive</h3>
-                    <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> College Campus</p>
-                    <p class="event-time-modern"><i class="fas fa-clock"></i> 9:00 AM - 12:00 PM</p>
-                    <p class="event-description-modern">Join us for our monthly campus clean-up to maintain our beautiful college grounds.</p>
-                    <a href="404.html" class="btn btn-glass">Register</a>
-                </div>
+    <!-- Events Section -->
+    <section id="events" class="section events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>
+                    <span>Upcoming  <span class="highlight">Events</span> </span>
+                   
+                </h2>
+                <div class="underline"></div>
             </div>
-            <div class="event-card-modern" data-aos="fade-up" data-aos-delay="200">
-                <div class="event-date-modern">
-                    <span class="date-day-modern">10</span>
-                    <span class="date-month-modern">Jun</span>
+            <div class="events-timeline-modern">
+                <div class="timeline-container" id="timelineContainer">
+                    <!-- Event cards will be added here by JavaScript -->
                 </div>
-                <div class="event-content-modern">
-                    <h3>Sustainable Living Workshop</h3>
-                    <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> Seminar Hall</p>
-                    <p class="event-time-modern"><i class="fas fa-clock"></i> 2:00 PM - 4:00 PM</p>
-                    <p class="event-description-modern">Learn practical tips for adopting a more sustainable lifestyle in your daily routine.</p>
-                    <a href="404.html" class="btn btn-glass">Register</a>
+                <div class="timeline-dots" id="timelineDots">
+                    <!-- Dots will be added here by JavaScript -->
                 </div>
-            </div>
-            <div class="event-card-modern" data-aos="fade-up" data-aos-delay="300">
-                <div class="event-date-modern">
-                    <span class="date-day-modern">22</span>
-                    <span class="date-month-modern">Jun</span>
-                </div>
-                <div class="event-content-modern">
-                    <h3>World Environment Day Celebration</h3>
-                    <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> College Auditorium</p>
-                    <p class="event-time-modern"><i class="fas fa-clock"></i> 10:00 AM - 5:00 PM</p>
-                    <p class="event-description-modern">A full day of activities including seminars, competitions, and exhibitions celebrating our environment.</p>
-                    <a href="404.html" class="btn btn-glass">Register</a>
+                <div class="timeline-controls">
+                    <div class="control-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="control-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="view-all-container" data-aos="fade-up">
-            <a href="404.html" class="btn btn-outlined btn-glass">View All Events</a>
-        </div>
-    </div>
-</section>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Event data
+            const events = [
+                {
+                    id: 2,
+                    title: "Patriotic Pen",
+                    location: "College Campus",
+                    date: "2nd week of August 2025",
+                    description: "Join us for our India's Role in Environmental Sustainability.",
+                    link: "404.html"
+                },
+                {
+                    id: 3,
+                    title: "Eco Graphica",
+                    location: "College Campus",
+                    date: "4th week of August 2025",
+                    description: "Poster Design Contest on 'Visualizing a Greener Future'.",
+                    link: "404.html"
+                },
+                {
+                    id: 4,
+                    title: "Field Visit",
+                    location: "Educational Eco Tour",
+                    date: "2nd week of September 2025",
+                    description: "Join our educational tour to learn about eco-systems.",
+                    link: "404.html"
+                },
+                {
+                    id: 5,
+                    title: "Technical Symposium",
+                    location: "College Auditorium",
+                    date: "4th week of September 2025",
+                    description: "'E to S' on 'World Sustainable Energy Day'.",
+                    link: "404.html"
+                },
+                {
+                    id: 6,
+                    title: "Hackathon",
+                    location: "Tech Lab",
+                    date: "1st week of October 2025",
+                    description: "'Tech Solutions for Eco Challenges' - Bring your innovative ideas!",
+                    link: "404.html"
+                },
+                {
+                    id: 7,
+                    title: "Guest Lecture & Workshop",
+                    location: "Conference Hall",
+                    date: "2nd week of October 2025",
+                    description: "On 'Water Quality Testing' - Celebrating World Water Day.",
+                    link: "404.html"
+                },
+                {
+                    id: 8,
+                    title: "Eco Quiz Competition",
+                    location: "College Campus",
+                    date: "4th week of November 2025",
+                    description: "'Renewable Energy & Climate Change Awareness'.",
+                    link: "404.html"
+                }
+            ];
+
+            const timelineContainer = document.getElementById('timelineContainer');
+            const timelineDots = document.getElementById('timelineDots');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            let currentIndex = 0;
+            let autoScrollInterval;
+            const cardWidth = 350; // Should match CSS width
+            const cardsPerView = Math.min(3, Math.floor(window.innerWidth / cardWidth));
+
+            // Create event cards
+            function createEventCards() {
+                timelineContainer.innerHTML = '';
+                timelineDots.innerHTML = '';
+
+                events.forEach((event, index) => {
+                    // Create card
+                    const card = document.createElement('div');
+                    card.className = 'event-card-modern';
+                    card.innerHTML = `
+                        <div class="event-content-modern">
+                            <h3>${event.title}</h3>
+                            <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
+                            <p class="event-time-modern"><i class="fas fa-clock"></i> ${event.date}</p>
+                            <p class="event-description-modern">${event.description}</p>
+                            <a href="${event.link}" class="btn btn-glass">Register</a>
+                        </div>
+                    `;
+                    timelineContainer.appendChild(card);
+
+                    // Create dot
+                    const dot = document.createElement('div');
+                    dot.className = 'dot';
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        goToSlide(index);
+                    });
+                    timelineDots.appendChild(dot);
+                });
+
+                // Clone first few cards for infinite loop effect
+                for (let i = 0; i < cardsPerView; i++) {
+                    const clone = timelineContainer.children[i].cloneNode(true);
+                    timelineContainer.appendChild(clone);
+                }
+            }
+
+            // Go to specific slide
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSliderPosition();
+                updateDots();
+            }
+
+            // Update slider position
+            function updateSliderPosition() {
+                const offset = -currentIndex * cardWidth;
+                timelineContainer.style.transform = `translateX(${offset}px)`;
+            }
+
+            // Update active dot
+            function updateDots() {
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex % events.length);
+                });
+            }
+
+            // Next slide
+            function nextSlide() {
+                currentIndex++;
+                if (currentIndex >= events.length) {
+                    // When reaching the end, reset to first card smoothly
+                    currentIndex = 0;
+                    timelineContainer.style.transition = 'none';
+                    updateSliderPosition();
+                    // Force reflow
+                    void timelineContainer.offsetWidth;
+                    timelineContainer.style.transition = 'transform 0.5s ease';
+                }
+                updateSliderPosition();
+                updateDots();
+            }
+
+            // Previous slide
+            function prevSlide() {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    // When reaching the start, reset to last card
+                    currentIndex = events.length - 1;
+                    timelineContainer.style.transition = 'none';
+                    updateSliderPosition();
+                    // Force reflow
+                    void timelineContainer.offsetWidth;
+                    timelineContainer.style.transition = 'transform 0.5s ease';
+                }
+                updateSliderPosition();
+                updateDots();
+            }
+
+            // Start auto-scrolling
+            function startAutoScroll() {
+                autoScrollInterval = setInterval(nextSlide, 3000);
+            }
+
+            // Stop auto-scrolling
+            function stopAutoScroll() {
+                clearInterval(autoScrollInterval);
+            }
+
+            // Initialize
+            createEventCards();
+            startAutoScroll();
+
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                nextSlide();
+                startAutoScroll();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                prevSlide();
+                startAutoScroll();
+            });
+
+            // Pause auto-scroll on hover
+            timelineContainer.addEventListener('mouseenter', stopAutoScroll);
+            timelineContainer.addEventListener('mouseleave', startAutoScroll);
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                updateSliderPosition();
+            });
+
+            // Touch events for mobile swipe
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            timelineContainer.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoScroll();
+            });
+
+            timelineContainer.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                startAutoScroll();
+            });
+
+            function handleSwipe() {
+                const threshold = 50;
+                if (touchEndX < touchStartX - threshold) {
+                    nextSlide();
+                } else if (touchEndX > touchStartX + threshold) {
+                    prevSlide();
+                }
+            }
+        });
+    </script>
+
 
 <!-- Enhanced Gallery Section -->
 <div class="gallery-container">
@@ -422,9 +632,17 @@
     </div>
 </div>
 
-<div class="view-all-container" data-aos="fade-up">
+<div class="view-all-container" data-aos="fade-up" style="display: flex; justify-content: center; align-items: center; margin: 32px 0;">
     <a href="gallery.html" class="btn btn-outlined btn-glass">View Gallery</a>
 </div>
+<style>
+.view-all-container {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 32px 0 !important;
+}
+</style>
 
 <!-- Team Section -->
 <section id="team" class="section team-section">
@@ -440,15 +658,15 @@
             <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="100">
                 <img src="./assets/images/sir.jpg" alt="Alex Johnson" class="pillar-full-img">
                 <div class="pillar-overlay">
-                    <h3>Alex Johnson</h3>
-                    <p class="pillar-position">President</p>
+                    <h3>Mr.R.Sathish Raam</h3>
+                    <p class="pillar-position">FACULTY ADVISORS</p>
                 </div>
             </div>
-            <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="./assets/images/home9.jpg" alt="Samantha Park" class="pillar-full-img">
+            <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="200" style="overflow: hidden;">
+                <img src="./assets/images/mam.jpg" alt="Dr.S.Gomathy" class="pillar-full-img" style="width: 100%; height: 360px; object-fit: cover; object-position: top;">
                 <div class="pillar-overlay">
-                    <h3>Samantha Park</h3>
-                    <p class="pillar-position">Vice President</p>
+                    <h3>Dr.S.Gomathy</h3>
+                    <p class="pillar-position">FACULTY ADVISORS</p>
                 </div>
             </div>
         </div>
@@ -567,7 +785,7 @@
                     <h3>Contact Us</h3>
                     <ul class="footer-contact">
                         <li><i class="fas fa-envelope"></i> <a href="mailto:eecclub@email.com">eecclub@email.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=College+Campus,+City,+Country" target="_blank">College Campus, City, Country</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=College+Campus,+City,+Country" target="_blank">kongu engineering college </a></li>
                         <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></li>
                     </ul>
                 </div>
