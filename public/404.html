@@ -1,456 +1,280 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>404 Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
-    :root {
-      --primary-color: #00e6ff;
-      --secondary-color: #0072ff;
-      --bg-gradient: linear-gradient(135deg, #0f2027, #2c5364, #203a43);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      background: var(--bg-gradient);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      position: relative;
-    }
-    
-    /* Particle background */
-    .particles {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-    
-    .center-box {
-      background: rgba(255,255,255,0.05);
-      border-radius: 24px;
-      box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 3rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      width: 90%;
-      max-width: 600px;
-      margin: 0 auto;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* 404 Text Effect */
-    .glow-404 {
-      font-size: clamp(5rem, 15vw, 8rem);
-      font-weight: 800;
-      color: #fff;
-      text-shadow: 0 0 10px var(--primary-color), 
-                   0 0 20px var(--primary-color), 
-                   0 0 40px var(--primary-color);
-      animation: float404 3s ease-in-out infinite alternate;
-      letter-spacing: 0.1em;
-      position: relative;
-      display: inline-block;
-      margin-bottom: 1rem;
-    }
-    
-    .glow-404::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 5px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      border-radius: 50%;
-      filter: blur(5px);
-      opacity: 0.7;
-      animation: pulse 2s infinite;
-    }
-    
-    @keyframes float404 {
-      0% { transform: translateY(0) rotate(0.5deg); }
-      100% { transform: translateY(-20px) rotate(-0.5deg); }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 0.7; }
-      50% { transform: scale(1.05); opacity: 1; }
-    }
-    
-    /* Subtitle */
-    .subtitle {
-      color: #fff;
-      font-size: clamp(1rem, 4vw, 1.5rem);
-      margin-bottom: 2rem;
-      opacity: 0.9;
-      animation: fadeIn 1.5s 0.5s both;
-      line-height: 1.5;
-      padding: 0 1rem;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 0.9; transform: translateY(0); }
-    }
-    
-    /* Button */
-    .btn-home {
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-      padding: 0.8rem 2.5rem;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      color: #fff;
-      border: none;
-      box-shadow: 0 4px 20px rgba(0, 230, 255, 0.3);
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    
-    .btn-home::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: 0.5s;
-      z-index: -1;
-    }
-    
-    .btn-home:hover {
-      transform: translateY(-3px) scale(1.03);
-      box-shadow: 0 6px 25px rgba(0, 230, 255, 0.4);
-    }
-    
-    .btn-home:hover::before {
-      left: 100%;
-    }
-    
-    /* Animated floating elements */
-    .floating-elements {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-    
-    .floating-element {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.15;
-      background: var(--primary-color);
-      filter: blur(1px);
-      animation: floatElement linear infinite;
-    }
-    
-    @keyframes floatElement {
-      0% { transform: translateY(0) rotate(0deg); }
-      100% { transform: translateY(-100vh) rotate(360deg); }
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .center-box {
-        padding: 2rem 1.5rem;
-        border-radius: 16px;
-      }
-      
-      .glow-404 {
-        font-size: clamp(4rem, 20vw, 6rem);
-      }
-      
-      .subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
-      }
-      
-      .btn-home {
-        padding: 0.7rem 2rem;
-        font-size: 1rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .center-box {
-        padding: 1.5rem 1rem;
-        width: 95%;
-      }
-      
-      .glow-404 {
-        font-size: clamp(3rem, 25vw, 5rem);
-      }
-      
-      .subtitle {
-        font-size: 1rem;
-      }
-    }
-    
-    /* Additional decorative elements */
-    .corner-decoration {
-      position: absolute;
-      width: 100px;
-      height: 100px;
-      border: 2px solid rgba(0, 230, 255, 0.3);
-      border-radius: 10px;
-      pointer-events: none;
-    }
-    
-    .corner-top-left {
-      top: 20px;
-      left: 20px;
-      border-right: none;
-      border-bottom: none;
-      animation: cornerAnim 6s infinite ease-in-out;
-    }
-    
-    .corner-top-right {
-      top: 20px;
-      right: 20px;
-      border-left: none;
-      border-bottom: none;
-      animation: cornerAnim 6s infinite ease-in-out 1s;
-    }
-    
-    .corner-bottom-left {
-      bottom: 20px;
-      left: 20px;
-      border-right: none;
-      border-top: none;
-      animation: cornerAnim 6s infinite ease-in-out 2s;
-    }
-    
-    .corner-bottom-right {
-      bottom: 20px;
-      right: 20px;
-      border-left: none;
-      border-top: none;
-      animation: cornerAnim 6s infinite ease-in-out 3s;
-    }
-    
-    @keyframes cornerAnim {
-      0%, 100% { transform: scale(1); opacity: 0.3; }
-      50% { transform: scale(1.1); opacity: 0.6; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | College Club</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --pure-white: #ffffff;
+            --bg-white: #f9f9f9;
+            --dark-green: #0a5c36;
+            --medium-green: #1e8449;
+            --bright-green: #27ae60;
+            --light-green: #d5f5e3;
+            --text-dark: #333333;
+            --text-medium: #555555;
+        }
+
+        body {
+            background-color: var(--bg-white);
+            color: var(--text-dark);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        @supports (font-variation-settings: normal) {
+            body { font-family: 'Inter var', -apple-system, BlinkMacSystemFont, sans-serif; }
+        }
+
+        .error-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .error-card {
+            background: var(--pure-white);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(10, 92, 54, 0.08);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 500px;
+            position: relative;
+        }
+
+        .error-content {
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .error-code {
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+
+        .error-code::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--bright-green);
+            border-radius: 2px;
+        }
+
+        .error-message {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            color: var(--text-dark);
+        }
+
+        .error-description {
+            color: var(--text-medium);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            background: var(--bright-green);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-home:hover {
+            background: var(--medium-green);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+        }
+
+        .event-panel {
+            background: linear-gradient(135deg, var(--dark-green), var(--medium-green));
+            color: white;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-panel::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .event-panel::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .event-title i {
+            color: var(--bright-green);
+        }
+
+        .event-description {
+            opacity: 0.9;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .event-countdown {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .countdown-title {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            opacity: 0.7;
+        }
+
+        .countdown-numbers {
+            font-size: 1.8rem;
+            font-weight: 700;
+            font-feature-settings: "tnum";
+        }
+
+        .notify-btn {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            align-self: flex-start;
+        }
+
+        .notify-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .error-card {
+                grid-template-columns: 1fr;
+            }
+            
+            .error-content,
+            .event-panel {
+                padding: 40px 30px;
+            }
+            
+            .error-code {
+                font-size: 4rem;
+            }
+            
+            .error-message {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Particle background -->
-  <div class="particles" id="particles-js"></div>
-  
-  <!-- Floating elements -->
-  <div class="floating-elements" id="floatingElements"></div>
-  
-  <div class="center-box position-relative">
-    <!-- Corner decorations -->
-    <div class="corner-decoration corner-top-left"></div>
-    <div class="corner-decoration corner-top-right"></div>
-    <div class="corner-decoration corner-bottom-left"></div>
-    <div class="corner-decoration corner-bottom-right"></div>
-    
-    <div class="glow-404">404</div>
-    <div class="subtitle">Oops! The page you're looking for doesn't exist or has been moved.</div>
-    <button class="btn btn-home" onclick="goHome()">
-      <i class="fas fa-home me-2"></i> Go Home
-    </button>
-  </div>
+    <div class="container error-container py-5">
+        <div class="error-card">
+            <div class="error-content">
+                <!-- Replace with your club logo -->
+                <img src="club-logo.png" alt="Club Logo" style="height: 40px; margin-bottom: 30px;">
+                
+                <div class="error-code">404</div>
+                <h1 class="error-message">Page Not Found</h1>
+                <p class="error-description">
+                    The page you're looking for doesn't exist or may have been moved.
+                    Please check the URL or return to our homepage.
+                </p>
+                
+                <a href="index.html" class="btn-home" style="text-decoration: none;">
+                  <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+            
+            <div class="event-panel">
+                <h2 class="event-title">
+                    <i class="fas fa-calendar-star"></i> EVENT COMING SOON!
+                </h2>
+                <p class="event-description">
+                    Our biggest annual event is just around the corner. 
+                    Stay tuned for exciting announcements and prepare for an unforgettable experience!
+                </p>
+                
+                
+                
+                <button class="notify-btn">
+                    <i class="fas fa-bell"></i> Notify Me
+                </button>
+            </div>
+        </div>
+    </div>
 
-  <!-- Bootstrap JS CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Particles.js library -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  
-  <script>
-    function goHome() {
-      window.location.href = 'index.html';
-    }
-    
-    // Interactive 404 text
-    const glow404 = document.querySelector('.glow-404');
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 20;
-      const y = (e.clientY / window.innerHeight - 0.5) * 20;
-      glow404.style.transform = `translateY(-10px) rotateX(${y}deg) rotateY(${x}deg)`;
-    });
-    
-    document.addEventListener('mouseleave', () => {
-      glow404.style.transform = '';
-    });
-    
-    // Create floating elements
-    const floatingContainer = document.getElementById('floatingElements');
-    const shapes = ['circle', 'triangle', 'square'];
-    const colors = ['#00e6ff', '#0072ff', '#00ffaa', '#ff00aa'];
-    
-    for (let i = 0; i < 15; i++) {
-      const element = document.createElement('div');
-      element.className = 'floating-element';
-      
-      // Random properties
-      const size = Math.random() * 30 + 10;
-      const posX = Math.random() * 100;
-      const duration = Math.random() * 15 + 10;
-      const delay = Math.random() * 5;
-      const color = colors[Math.floor(Math.random() * colors.length)];
-      
-      element.style.width = `${size}px`;
-      element.style.height = `${size}px`;
-      element.style.left = `${posX}%`;
-      element.style.animationDuration = `${duration}s`;
-      element.style.animationDelay = `${delay}s`;
-      element.style.backgroundColor = color;
-      
-      // Random shape
-      if (Math.random() > 0.7) {
-        element.style.borderRadius = '0';
-        if (Math.random() > 0.5) {
-          element.style.clipPath = 'polygon(50% 0%, 0% 100%, 100% 100%)';
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Simple countdown timer (conceptual)
+        function updateCountdown() {
+            const countdownEl = document.querySelector('.countdown-numbers');
+            // In a real implementation, you would calculate actual time difference
+            countdownEl.textContent = "14 Days 06:22:15"; 
         }
-      }
-      
-      floatingContainer.appendChild(element);
-    }
-    
-    // Initialize particles.js
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-          "particles": {
-            "number": {
-              "value": 80,
-              "density": {
-                "enable": true,
-                "value_area": 800
-              }
-            },
-            "color": {
-              "value": "#00e6ff"
-            },
-            "shape": {
-              "type": "circle",
-              "stroke": {
-                "width": 0,
-                "color": "#000000"
-              }
-            },
-            "opacity": {
-              "value": 0.5,
-              "random": true,
-              "anim": {
-                "enable": true,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-              }
-            },
-            "size": {
-              "value": 3,
-              "random": true,
-              "anim": {
-                "enable": true,
-                "speed": 2,
-                "size_min": 0.1,
-                "sync": false
-              }
-            },
-            "line_linked": {
-              "enable": true,
-              "distance": 150,
-              "color": "#00e6ff",
-              "opacity": 0.2,
-              "width": 1
-            },
-            "move": {
-              "enable": true,
-              "speed": 1,
-              "direction": "none",
-              "random": true,
-              "straight": false,
-              "out_mode": "out",
-              "bounce": false,
-              "attract": {
-                "enable": true,
-                "rotateX": 600,
-                "rotateY": 1200
-              }
-            }
-          },
-          "interactivity": {
-            "detect_on": "canvas",
-            "events": {
-              "onhover": {
-                "enable": true,
-                "mode": "grab"
-              },
-              "onclick": {
-                "enable": true,
-                "mode": "push"
-              },
-              "resize": true
-            },
-            "modes": {
-              "grab": {
-                "distance": 140,
-                "line_linked": {
-                  "opacity": 0.5
-                }
-              },
-              "push": {
-                "particles_nb": 4
-              }
-            }
-          },
-          "retina_detect": true
+        
+        // Update every second
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Back to home button functionality
+        document.querySelector('.btn-home').addEventListener('click', function() {
+            window.location.href = 'index.html';
         });
-      }
-    });
-    
-    // Add ripple effect to button
-    const btn = document.querySelector('.btn-home');
-    btn.addEventListener('click', function(e) {
-      const x = e.clientX - e.target.getBoundingClientRect().left;
-      const y = e.clientY - e.target.getBoundingClientRect().top;
-      
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple-effect';
-      ripple.style.left = `${x}px`;
-      ripple.style.top = `${y}px`;
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => {
-        ripple.remove();
-      }, 1000);
-    });
-  </script>
+    </script>
 </body>
 </html>

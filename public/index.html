@@ -10,59 +10,20 @@
   <meta name="google-site-verification" content="your-verification-code-here">
   
   <!-- Primary Meta Tags -->
-<title>Energy & Environment Club (EECC)</title>
-<link rel="icon" href="./assets/images/logo 1.png" type="image/png">
+  <title>Energy & Environment Club (EECC)</title>
+  <link rel="icon" href="./assets/images/logo 1.png" type="image/png">
   <meta name="description" content="Official EECC club at Kongu Engineering College. Leading student-driven sustainability projects, energy conservation programs, and green campus initiatives since 2023.">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="keywords" content="EECC KEC, Kongu Engineering College clubs, Energy Conservation club, KEC eco club, student sustainability projects, green campus initiatives, Erode environmental club, college energy saving projects">
-  <meta name="author" content="Energy and Environment Conservation Club">
-  <meta name="robots" content="index, follow">
-  
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="EECC Club | Leading Sustainability at Kongu Engineering College">
-  <meta property="og:description" content="Student-run Energy & Environment Conservation Club driving green initiatives at KEC">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://eecc.vercel.app">
-  <meta property="og:image" content="https://eecc.vercel.app/images/og-banner.jpg">
-  <meta property="og:site_name" content="EECC KEC">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="EECC Club | Leading Sustainability at Kongu Engineering College">
-  <meta name="twitter:description" content="Student-run Energy & Environment Conservation Club driving green initiatives at KEC">
-  <meta name="twitter:image" content="https://eecc.vercel.app/images/og-banner.jpg">
-  
   <!-- CSS -->
   <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://eecc.vercel.app">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Energy and Environment Conservation Club",
-    "url": "https://eecc.vercel.app",
-    "logo": "https://eecc.vercel.app/images/logo.png",
-    "sameAs": [
-      "https://www.facebook.com/EECC.KEC",
-      "https://www.instagram.com/eecc_kec"
-    ],
-    "description": "Student-run organization promoting sustainability at Kongu Engineering College"
-  }
-  </script>
 </head>
-
-
  <style>
         /* Enhanced initial loading animation with KEC focus */
         .kec-splash {
@@ -130,6 +91,47 @@
         <p class="subtext">Energy & Environment Conservation Club</p>
     </div>
 </div>
+<!-- Scripts -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Show KEC splash screen first
+    const kecSplash = document.getElementById('kecSplash');
+    const regularLoader = document.querySelector('.eec-loader');
+    
+    // After 2.5 seconds, fade out the KEC splash and show regular loader
+    setTimeout(() => {
+        kecSplash.style.opacity = '0';
+        
+        // After fade out completes, remove splash and show regular loader
+        setTimeout(() => {
+            kecSplash.style.display = 'none';
+            regularLoader.style.display = 'flex';
+            
+            // Then proceed with the rest of your page loading
+            setTimeout(() => {
+                regularLoader.style.opacity = '0';
+                setTimeout(() => {
+                    regularLoader.style.display = 'none';
+                    
+                    // Initialize AOS and other scripts after everything is loaded
+                    AOS.init({
+                        duration: 1000,
+                        easing: 'ease-out-quart',
+                        once: false,
+                        mirror: true,
+                        offset: 120,
+                        delay: 100,
+                        anchorPlacement: 'top-bottom',
+                        disable: function() {
+                            return window.innerWidth < 768;
+                        }
+                    });
+                }, 500);
+            }, 1000);
+        }, 800);
+    }, 2500);
+});
+</script>
 
 <!-- Regular Loader (will be shown after splash) -->
 <div class="eec-loader">
@@ -147,12 +149,12 @@
     <div class="navbar-container">
         <div class="logo">
             <a href="#home">
-                <span class="logo-text">KONGU ENGINEERING COLLEGE </span>
-                
+            <img src="./assets/images/logo 1.png" alt="EECC Logo" style="height:40px; vertical-align:middle; margin-right:10px;">
+            <span class="logo-text">KONGU ENGINEERING COLLEGE</span>
             </a>
         </div>
         <ul class="nav-menu">
-            <li><a href="#home" class="nav-link active hover-effect-1">Home</a></li>
+            
             <li><a href="#about" class="nav-link hover-effect-1">About Us</a></li>
             <li>
                 <a href="#events" class="nav-link hover-effect-1" id="blink-circle-link">
@@ -179,11 +181,12 @@
                 }
             </style>
             <li><a href="gallery.html" class="nav-link hover-effect-1">Gallery</a></li>
+            <li><a href="#officebearers" class="nav-link hover-effect-1">Office Bearers</a></li>
         </ul>
-        <button class="nav-toggle" id="mobileMenu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <button class="nav-toggle" id="mobileMenu" style="background: transparent; border: none;">
+            <span class="bar" style="display: block; width: 28px; height: 3px; background: #0d0d0d; margin: 6px 0; border-radius: 2px;"></span>
+            <span class="bar" style="display: block; width: 28px; height: 3px; background: #0b0b0b; margin: 6px 0; border-radius: 2px;"></span>
+            <span class="bar" style="display: block; width: 28px; height: 3px; background: #0e0e0e; margin: 6px 0; border-radius: 2px;"></span>
         </button>
     </div>
 </nav>
@@ -294,8 +297,33 @@
         </div>
     </div>
 </section>
-   
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Events Section -->
+    <section id="events" class="section events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>
+                    <span>Upcoming <span class="highlight">Events</span></span>
+                </h2>
+                <div class="underline"></div>
+
+            </div>
+            <div class="events-timeline-modern"></div>
+            <div class="events-timeline-modern">
+                <div class="timeline-container" id="timelineContainer">
+                    <!-- Event cards will be added here by JavaScript -->
+                </div>
+                <div class="timeline-dots" id="timelineDots">
+                    <!-- Dots will be added here by JavaScript -->
+                </div>
+                
+                <div style="display: flex; justify-content: center; align-items: center; margin: 25px 0;">
+                    <a href="#events" class="btn btn-primary btn-glass" style="padding: 10px 32px; font-size: 1.1rem;">
+                    View Events
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <style>
         :root {
             --primary-color: #4CAF50;
@@ -306,35 +334,6 @@
             --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
     </style>
-
-    <!-- Events Section -->
-    <section id="events" class="section events-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>
-                    <span>Upcoming  <span class="highlight">Events</span> </span>
-                   
-                </h2>
-                <div class="underline"></div>
-            </div>
-            <div class="events-timeline-modern">
-                <div class="timeline-container" id="timelineContainer">
-                    <!-- Event cards will be added here by JavaScript -->
-                </div>
-                <div class="timeline-dots" id="timelineDots">
-                    <!-- Dots will be added here by JavaScript -->
-                </div>
-                <div class="timeline-controls">
-                    <div class="control-btn" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-                    <div class="control-btn" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -809,47 +808,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="./js/main.js"></script>
 
-
-<!-- Scripts -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Show KEC splash screen first
-    const kecSplash = document.getElementById('kecSplash');
-    const regularLoader = document.querySelector('.eec-loader');
-    
-    // After 2.5 seconds, fade out the KEC splash and show regular loader
-    setTimeout(() => {
-        kecSplash.style.opacity = '0';
-        
-        // After fade out completes, remove splash and show regular loader
-        setTimeout(() => {
-            kecSplash.style.display = 'none';
-            regularLoader.style.display = 'flex';
-            
-            // Then proceed with the rest of your page loading
-            setTimeout(() => {
-                regularLoader.style.opacity = '0';
-                setTimeout(() => {
-                    regularLoader.style.display = 'none';
-                    
-                    // Initialize AOS and other scripts after everything is loaded
-                    AOS.init({
-                        duration: 1000,
-                        easing: 'ease-out-quart',
-                        once: false,
-                        mirror: true,
-                        offset: 120,
-                        delay: 100,
-                        anchorPlacement: 'top-bottom',
-                        disable: function() {
-                            return window.innerWidth < 768;
-                        }
-                    });
-                }, 500);
-            }, 1000);
-        }, 800);
-    }, 2500);
-});
-</script>
 </body>
 </html>
