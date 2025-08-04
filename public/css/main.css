@@ -218,14 +218,15 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 10 ;
 }
 
 .logo {
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    padding-left: 10px;
 }
 
 .logo a {
@@ -239,8 +240,9 @@ a:hover {
 }
 
 .logo-text {
-    margin-right: 0.5rem;
+    margin-right: 0.0rem;
     white-space: nowrap;
+    padding-right: 10px;
 }
 
 @media screen and (max-width: 576px) {
@@ -258,12 +260,14 @@ a:hover {
 .nav-menu {
     display: flex;
     align-items: center;
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Removes default padding */
 }
 
 .nav-menu li {
     margin-left: 2.5rem;
+    list-style: none; /* Ensures no bullet points */
 }
-
 .nav-link {
     color: var(--white);
     font-weight: 600;
