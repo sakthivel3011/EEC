@@ -17,8 +17,7 @@
     <!-- Header Section -->
     <header class="header">
          <div class="container d-flex justify-content-end my-4">
-    <a href="members.html" class="btn btn-success btn-lg px-4 animate__animated animate__fadeInUp animate__delay-3s">Members</a>
-    </div>
+        </div>
     </header>
     <!-- Staff Section -->
     <section id="staff" class="staff-section">
@@ -66,127 +65,101 @@
         </div>
     </section>
 
-    <!-- Office Bearers Section -->
+    <!-- Office Bearers Section (Rendered by JS) -->
     <section class="office-bearers">
         <div class="container">
             <h2 class="section-title text-center animate-up">Office Bearers</h2>
-            <div class="row second-row justify-content-center">
-                <!-- Office Bearers - 4 per row -->
-                <div class="col-md-6 col-lg-3 animate-up">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">Michael Chen</h3>
-                            <p class="member-position">President</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 animate-up animate-delay-1">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">David Rodriguez</h3>
-                            <p class="member-position">Vice President</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 animate-up animate-delay-2">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">Jennifer Lee</h3>
-                            <p class="member-position">Secretary</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 animate-up animate-delay-3">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">Emily Wilson</h3>
-                            <p class="member-position">Treasurer</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Additional Office Bearers - 4 per row -->
-                <div class="col-md-6 col-lg-3 animate-up">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">Sophia Martinez</h3>
-                            <p class="member-position">Event Coordinator</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 animate-up animate-delay-1">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">Robert Taylor</h3>
-                            <p class="member-position">Sports Coordinator</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 animate-up animate-delay-2">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">James Brown</h3>
-                            <p class="member-position">Public Relations</p>
-                            
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6 col-lg-3 animate-up animate-delay-3">
-                    <div class="member-card">
-                        <div class="member-img-container">
-                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Office Bearer" class="member-img">
-                        </div>
-                        <div class="member-info">
-                            <h3 class="member-name">Olivia Davis</h3>
-                            <p class="member-position">Membership Head</p>
-                            
-                        </div>
-                    </div>
-                </div>
+            <div id="officeBearersRow" class="row second-row justify-content-center">
+                <!-- Office bearers will be injected here by JS -->
             </div>
         </div>
     </section>
+    <script>
+    const officeBearers = [
+        {
+            name: "Michael Chen",
+            position: "President",
+            department: "Management",
+            img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: ""
+        },
+        {
+            name: "David Rodriguez",
+            position: "Vice President",
+            department: "Management",
+            img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: " animate-delay-1"
+        },
+        {
+            name: "Jennifer Lee",
+            position: "Secretary",
+            department: "Administration",
+            img: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: " animate-delay-2"
+        },
+        {
+            name: "Emily Wilson",
+            position: "Treasurer",
+            department: "Finance",
+            img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: " animate-delay-3"
+        },
+        {
+            name: "Sophia Martinez",
+            position: "Event Coordinator",
+            department: "Events",
+            img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: ""
+        },
+        {
+            name: "Robert Taylor",
+            position: "Sports Coordinator",
+            department: "Sports",
+            img: "https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: " animate-delay-1"
+        },
+        {
+            name: "James Brown",
+            position: "Public Relations",
+            department: "PR",
+            img: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: " animate-delay-2"
+        },
+        {
+            name: "Olivia Davis",
+            position: "Membership Head",
+            department: "Membership",
+            img: "https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+            delay: " animate-delay-3"
+        }
+        
+    ];
 
-    
-
-
-
-
-
-   
+    const officeBearersRow = document.getElementById('officeBearersRow');
+    officeBearers.forEach(bearer => {
+        const col = document.createElement('div');
+        col.className = `col-md-6 col-lg-3 animate-up${bearer.delay}`;
+        col.innerHTML = `
+            <div class="member-card">
+                <div class="member-img-container">
+                    <img src="${bearer.img}" alt="Office Bearer" class="member-img">
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">${bearer.name}</h3>
+                    <p class="member-position">${bearer.position}</p>
+                    <p class="member-department"><strong>Department:</strong> ${bearer.department}</p>
+                </div>
+            </div>
+        `;
+        officeBearersRow.appendChild(col);
+    });
+    </script>
+    <!-- Footer Section -->
+    <footer class="footer text-center py-3 bg-light">
+        <div class="container">
+            <small>&copy; 2023 Club Members Directory.</small>
+        </div>
+    </footer>
 
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
