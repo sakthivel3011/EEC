@@ -287,6 +287,21 @@ a:hover {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.2; }
 }
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .logo-img {
+        height: 30px;
+        margin-right: 9px;
+    }
+    
+    .nav-menu {
+        top: 65px;
+        height: calc(40vh - 65px);
+    }
+}
 
 /* Mobile Toggle */
 .nav-toggle {
@@ -811,37 +826,96 @@ a:hover {
     color: var(--primary-dark);
 }
 
-/* Form Styles */
-.form-group {
-    margin-bottom: 1.2rem;
+/* ====================== */
+/* MEMBERSHIP FORM - RESPONSIVE */
+/* ====================== */
+
+/* Form Container */
+.join-form {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 100%;
+    max-width: 600px;
+    
+    margin: 0 auto;
 }
 
+.join-form h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+/* Form Group Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+/* Input Fields */
 input,
 select,
 textarea {
     width: 100%;
-    min-width:500px;
-    max-width: 800px;
-    padding: 0.5rem 0.9rem;
+    padding: 0.8rem 1rem;
     border: 1px solid var(--grey-light);
     border-radius: var(--border-radius-sm);
     font-family: inherit;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: all 0.3s ease;
+    background-color: var(--white);
+    color: var(--text-color);
 }
 
+/* Focus States */
 input:focus,
 select:focus,
 textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px var(--primary-light);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
 }
 
+/* Select Dropdown Styling */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%237f8c8d'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+    padding-right: 2.5rem;
+}
+
+/* Textarea Specific Styles */
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.btn-full {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Loading Spinner */
 .form-loader {
     display: none;
-    align-items: center;
-    height: 100%;
     position: absolute;
     right: 1rem;
     top: 50%;
@@ -851,59 +925,85 @@ textarea:focus {
 .loader-circle {
     width: 20px;
     height: 20px;
-    border: 3px solid #e0e0e0;
-    border-top: 3px solid var(--primary-color);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: var(--white);
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
+/* Success Message */
 .form-success-message {
     display: none;
     text-align: center;
+    padding: 2rem;
+    background-color: rgba(76, 175, 80, 0.1);
+    border-radius: var(--border-radius);
     margin-top: 1.5rem;
-    width: 320px;
-    min-height: 120px;
-    margin-left: auto;
-    margin-right: auto;
 }
+
 .form-success-checkmark {
-    width: 200px;
+    width: 80px;
     height: 80px;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
 }
 
 .form-success-checkmark svg {
-    width: 200px;
+    width: 80px;
     height: 80px;
 }
 
-.form-success-checkmark path {
-    stroke: var(--primary-color);
-    stroke-width: 5;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
-    fill: none;
+.form-success-message h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-.form-success-checkmark .checkmark-circle {
-    stroke-dasharray: 166;
-    stroke-dashoffset: 166;
-    stroke-width: 5;
-    stroke-miterlimit: 10;
-    stroke: var(--primary-color);
-    fill: none;
-    animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards;
+.form-success-message p {
+    color: var(--text-color);
 }
 
-.form-success-checkmark .checkmark-check {
-    transform-origin: 50% 50%;
-    stroke-dasharray: 48;
-    stroke-dashoffset: 48;
-    animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .join-form {
+        padding: 1.5rem;
+    }
+    
+    .join-form h3 {
+        font-size: 1.3rem;
+    }
+    
+    input,
+    select,
+    textarea {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    
+    textarea {
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .join-form {
+        padding: 1.2rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1.2rem;
+    }
+    
+    .btn-full {
+        padding: 0.9rem;
+    }
+    
+    .form-success-message {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
 }
 
 @keyframes stroke {
@@ -934,129 +1034,6 @@ textarea:focus {
     opacity: 1;
 }
 
-/* Footer */
-.footer {
-    background: #1a2a1a;
-    color: #e0f2e9;
-    margin-top: 4rem;
-}
-
-.glassy-footer {
-    background: rgba(34, 49, 34, 0.92);
-    padding: 3rem 0 2rem;
-}
-
-.footer-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.footer-widget {
-    flex: 1;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-}
-
-.logo-text {
-    color: var(--primary-color);
-    margin-right: 0.5rem;
-}
-
-.logo-icon {
-    color: var(--primary-color);
-}
-
-.footer-desc {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    color: #b2dfdb;
-}
-
-.footer-social {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.footer-social a {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    transition: var(--transition);
-}
-
-.footer-social a:hover {
-    color: var(--white);
-}
-
-.footer-widget h3 {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--white);
-}
-
-.footer-contact {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-contact li {
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 0.8rem;
-}
-
-.footer-contact a {
-    color: #b2dfdb;
-    transition: var(--transition);
-    font-size: 0.95rem;
-}
-
-.footer-contact a:hover {
-    color: var(--primary-color);
-}
-
-.footer-contact i {
-    color: var(--primary-color);
-    margin-top: 2px;
-}
-
-.glassy-footer-bottom {
-    background: rgba(34, 49, 34, 0.98);
-    padding: 1rem 0;
-    border-top: 1px solid #2e4732;
-}
-
-.footer-bottom .container {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 0.85rem;
-    color: #b2dfdb;
-}
-
-.footer-bottom a {
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-.footer-bottom a:hover {
-    color: var(--white);
-}
 
 /* Back to Top Button */
 .back-to-top {
@@ -1085,7 +1062,7 @@ textarea:focus {
 }
 
 .back-to-top:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--dark-bg);
     transform: translateY(-5px);
 }
 
