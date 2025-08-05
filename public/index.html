@@ -10,80 +10,27 @@
   <meta name="google-site-verification" content="your-verification-code-here">
   
   <!-- Primary Meta Tags -->
-  <title>Energy & Environment Club (EECC)</title>
+  <title>Energy & Environment Club (EECC) | Kongu Engineering College</title>
   <link rel="icon" href="./assets/images/logo/club.png" type="image/png">
   <meta name="description" content="Official EECC club at Kongu Engineering College. Leading student-driven sustainability projects, energy conservation programs, and green campus initiatives since 2023.">
+  
   <!-- Open Graph / Social Sharing -->
   <meta property="og:title" content="EECC Club | Leading Sustainability at Kongu Engineering College">
+  <meta property="og:description" content="Official EECC club at Kongu Engineering College. Leading sustainability initiatives since 2023.">
+  <meta property="og:image" content="./assets/images/logo/club.png">
+  <meta property="og:url" content="https://eecc.kongu.edu">
+  <meta property="og:type" content="website">
+  
   <!-- CSS -->
   <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://eecc.vercel.app">
+  <link rel="canonical" href="https://eecc.kongu.edu">
 </head>
- <style>
-        /* Enhanced initial loading animation with KEC focus */
-        .kec-splash {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.8s ease-out;
-        }
-        
-        .kec-splash-content {
-            text-align: center;
-            animation: fadeInScale 1.5s ease-out forwards;
-        }
-        
-        .kec-splash h1 {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #2e7d32;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .kec-splash .subtext {
-            font-size: 1.2rem;
-            color: #333;
-            opacity: 0;
-            animation: fadeIn 1s ease-out 1s forwards;
-        }
-        
-        @keyframes fadeInScale {
-            0% {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        
-        /* Hide the regular loader initially */
-        .eec-loader {
-            display: none;
-        }
-    </style>
-<body>
 
+<body>
 <!-- KEC Splash Screen -->
 <div class="kec-splash" id="kecSplash">
     <div class="kec-splash-content">
@@ -91,57 +38,8 @@
         <p class="subtext">Energy & Environment Conservation Club</p>
     </div>
 </div>
-<!-- Scripts -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Show KEC splash screen first
-    const kecSplash = document.getElementById('kecSplash');
-    const regularLoader = document.querySelector('.eec-loader');
-    
-    // After 2.5 seconds, fade out the KEC splash and show regular loader
-    setTimeout(() => {
-        kecSplash.style.opacity = '0';
-        
-        // After fade out completes, remove splash and show regular loader
-        setTimeout(() => {
-            kecSplash.style.display = 'none';
-            regularLoader.style.display = 'flex';
-            
-            // Then proceed with the rest of your page loading
-            setTimeout(() => {
-                regularLoader.style.opacity = '0';
-                setTimeout(() => {
-                    regularLoader.style.display = 'none';
-                    
-                    // Initialize AOS and other scripts after everything is loaded
-                    AOS.init({
-                        duration: 1000,
-                        easing: 'ease-out-quart',
-                        once: false,
-                        mirror: true,
-                        offset: 120,
-                        delay: 100,
-                        anchorPlacement: 'top-bottom',
-                        disable: function() {
-                            return window.innerWidth < 768;
-                        }
-                    });
-                }, 500);
-            }, 1000);
-        }, 800);
-    }, 2500);
-});
-</script>
 
 <!-- Regular Loader (will be shown after splash) -->
-<div class="eec-loader">
-    <div class="eec-loader-inner">
-        <div class="eec-loader-circle"></div>
-        <div class="eec-loader-circle"></div>
-        <div class="eec-loader-circle"></div>
-        <div class="eec-leaf"><i class="fas fa-leaf"></i></div>
-    </div>
-</div>
 
 
 <!-- Navigation Bar -->
@@ -149,12 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="navbar-container">
         <div class="logo">
             <a href="#home">
-            <img src="./assets/images/logo/clg.png " alt="EECC Logo" style="height:55px; vertical-align:middle; margin-right:0px;">
-            <span class="logo-text">KONGU ENGINEERING COLLEGE</span>
+                <img src="./assets/images/logo/clg.png" alt="Kongu Engineering College Logo" class="logo-img">
+                <span class="logo-text">KONGU ENGINEERING COLLEGE</span>
             </a>
         </div>
         <ul class="nav-menu">
-            
             <li><a href="#about" class="nav-link hover-effect-1">About Us</a></li>
             <li>
                 <a href="#events" class="nav-link hover-effect-1" id="blink-circle-link">
@@ -162,31 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     <span class="blink-circle"></span>
                 </a>
             </li>
-            <style>
-                /* Blinking circle next to Events nav link */
-                .blink-circle {
-                    display: inline-block;
-                    width: 10px;
-                    height: 10px;
-                    margin-left: 8px;
-                    border-radius: 50%;
-                    background: #4caf50;
-                    vertical-align: middle;
-                    animation: blinkCircle 1s infinite;
-                    box-shadow: 0 0 8px #4caf5066;
-                }
-                @keyframes blinkCircle {
-                    0%, 100% { opacity: 1; }
-                    50% { opacity: 0.2; }
-                }
-            </style>
             <li><a href="gallery.html" class="nav-link hover-effect-1">Gallery</a></li>
             <li><a href="#officebearers" class="nav-link hover-effect-1">Office Bearers</a></li>
         </ul>
-        <button class="nav-toggle" id="mobileMenu" style="background: transparent; border: none;">
-            <span class="bar" style="display: block; width: 28px; height: 3px; background: #0d0d0d; margin: 6px 0; border-radius: 2px;"></span>
-            <span class="bar" style="display: block; width: 28px; height: 3px; background: #0b0b0b; margin: 6px 0; border-radius: 2px;"></span>
-            <span class="bar" style="display: block; width: 28px; height: 3px; background: #0e0e0e; margin: 6px 0; border-radius: 2px;"></span>
+        <button class="nav-toggle" id="mobileMenu" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </button>
     </div>
 </nav>
@@ -207,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     <div class="hero-scroll-indicator">
-        <a href="#about">
+        <a href="#about" aria-label="Scroll down">
             <i class="fas fa-chevron-down"></i>
         </a>
     </div>
@@ -217,9 +96,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="about" class="section about-section modern-about">
     <div class="container about-center">
         <div class="about-header">
-            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
-                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">About </span>
-                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Us</span>
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                <span data-aos="zoom-in" data-aos-delay="300">About </span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500">Us</span>
             </h2>
             <div class="underline"></div>
         </div>
@@ -236,17 +115,17 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
         <div class="about-stats-cards">
             <div class="about-stat-card">
-                <div class="about-stat-icon"><i class="fas fa-users"></i></div>
+                <div class="about-stat-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
                 <div class="about-stat-label">Active Members</div>
                 <div class="about-stat-value" data-count="50">0</div>
             </div>
             <div class="about-stat-card">
-                <div class="about-stat-icon"><i class="fas fa-calendar-check"></i></div>
+                <div class="about-stat-icon"><i class="fas fa-calendar-check" aria-hidden="true"></i></div>
                 <div class="about-stat-label">Events Organized</div>
                 <div class="about-stat-value" data-count="20">0</div>
             </div>
             <div class="about-stat-card tree-card">
-                <div class="about-stat-icon"><i class="fas fa-tree"></i></div>
+                <div class="about-stat-icon"><i class="fas fa-tree" aria-hidden="true"></i></div>
                 <div class="about-stat-label">Total Trees Planted</div>
                 <div class="about-stat-value" data-count="500">0</div>
                 <div class="about-tree-note">and counting!</div>
@@ -259,37 +138,37 @@ document.addEventListener('DOMContentLoaded', function() {
 <section id="initiatives" class="section initiatives-section">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
-                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Our</span>
-                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Initiatives</span>
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                <span data-aos="zoom-in" data-aos-delay="300">Our</span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500">Initiatives</span>
             </h2>
             <div class="underline"></div>
         </div>
         <div class="initiatives-grid">
             <div class="initiative-card" data-aos="zoom-in" data-aos-delay="100">
                 <div class="initiative-icon">
-                    <i class="fas fa-solar-panel"></i>
+                    <i class="fas fa-solar-panel" aria-hidden="true"></i>
                 </div>
                 <h3>Renewable Energy</h3>
                 <p>Promoting solar and wind energy adoption through campus installations and community education programs.</p>
             </div>
             <div class="initiative-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="initiative-icon">
-                    <i class="fas fa-recycle"></i>
+                    <i class="fas fa-recycle" aria-hidden="true"></i>
                 </div>
                 <h3>Waste Management</h3>
                 <p>Implementing comprehensive recycling programs and organizing zero-waste campaigns on campus.</p>
             </div>
             <div class="initiative-card" data-aos="zoom-in" data-aos-delay="300">
                 <div class="initiative-icon">
-                    <i class="fas fa-tree"></i>
+                    <i class="fas fa-tree" aria-hidden="true"></i>
                 </div>
                 <h3>Reforestation</h3>
                 <p>Regular tree planting drives and maintenance of green spaces in and around campus.</p>
             </div>
             <div class="initiative-card" data-aos="zoom-in" data-aos-delay="400">
                 <div class="initiative-icon">
-                    <i class="fas fa-tint"></i>
+                    <i class="fas fa-tint" aria-hidden="true"></i>
                 </div>
                 <h3>Water Conservation</h3>
                 <p>Watershed management programs and initiatives to reduce water consumption in college facilities.</p>
@@ -297,301 +176,63 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
 </section>
-    <!-- Events Section -->
-    <section id="events" class="section events-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>
-                    <span>Upcoming <span class="highlight">Events</span></span>
-                </h2>
-                <div class="underline"></div>
 
+<!-- Events Section -->
+<section id="events" class="section events-section">
+    <div class="container">
+        <div class="section-header">
+            <h2>
+                <span>Upcoming <span class="highlight">Events</span></span>
+            </h2>
+            <div class="underline"></div>
+        </div>
+        <div class="events-timeline-modern">
+            <div class="timeline-container" id="timelineContainer">
+                <!-- Event cards will be added here by JavaScript -->
             </div>
-            <div class="events-timeline-modern"></div>
-            <div class="events-timeline-modern">
-                <div class="timeline-container" id="timelineContainer">
-                    <!-- Event cards will be added here by JavaScript -->
-                </div>
-                <div class="timeline-dots" id="timelineDots">
-                    <!-- Dots will be added here by JavaScript -->
-                </div>
-                
-                <div style="display: flex; justify-content: center; align-items: center; margin: 25px 0;">
-                    <a href="#events" class="btn btn-primary btn-glass" style="padding: 10px 32px; font-size: 1.1rem;">
-                    View Events
-                    </a>
-                </div>
+            <div class="timeline-dots" id="timelineDots">
+                <!-- Dots will be added here by JavaScript -->
+            </div>
+            
+            <div class="view-all-container">
+                <a href="#events" class="btn btn-primary btn-glass">View All Events</a>
             </div>
         </div>
-    </section>
-    <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #2E7D32;
-            --accent-color: #8BC34A;
-            --text-color: #333;
-            --light-bg: #f9f9f9;
-            --card-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-    </style>
+    </div>
+</section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Event data
-            const events = [
-                {
-                    id: 2,
-                    title: "Patriotic Pen",
-                    location: "College Campus",
-                    date: "2nd week of August 2025",
-                    description: "Join us for our India's Role in Environmental Sustainability.",
-                    link: "404.html"
-                },
-                {
-                    id: 3,
-                    title: "Eco Graphica",
-                    location: "College Campus",
-                    date: "4th week of August 2025",
-                    description: "Poster Design Contest on 'Visualizing a Greener Future'.",
-                    link: "404.html"
-                },
-                {
-                    id: 4,
-                    title: "Field Visit",
-                    location: "Educational Eco Tour",
-                    date: "2nd week of September 2025",
-                    description: "Join our educational tour to learn about eco-systems.",
-                    link: "404.html"
-                },
-                {
-                    id: 5,
-                    title: "Technical Symposium",
-                    location: "College Auditorium",
-                    date: "4th week of September 2025",
-                    description: "'E to S' on 'World Sustainable Energy Day'.",
-                    link: "404.html"
-                },
-                {
-                    id: 6,
-                    title: "Hackathon",
-                    location: "Tech Lab",
-                    date: "1st week of October 2025",
-                    description: "'Tech Solutions for Eco Challenges' - Bring your innovative ideas!",
-                    link: "404.html"
-                },
-                {
-                    id: 7,
-                    title: "Guest Lecture & Workshop",
-                    location: "Conference Hall",
-                    date: "2nd week of October 2025",
-                    description: "On 'Water Quality Testing' - Celebrating World Water Day.",
-                    link: "404.html"
-                },
-                {
-                    id: 8,
-                    title: "Eco Quiz Competition",
-                    location: "College Campus",
-                    date: "4th week of November 2025",
-                    description: "'Renewable Energy & Climate Change Awareness'.",
-                    link: "404.html"
-                }
-            ];
-
-            const timelineContainer = document.getElementById('timelineContainer');
-            const timelineDots = document.getElementById('timelineDots');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-
-            let currentIndex = 0;
-            let autoScrollInterval;
-            const cardWidth = 350; // Should match CSS width
-            const cardsPerView = Math.min(3, Math.floor(window.innerWidth / cardWidth));
-
-            // Create event cards
-            function createEventCards() {
-                timelineContainer.innerHTML = '';
-                timelineDots.innerHTML = '';
-
-                events.forEach((event, index) => {
-                    // Create card
-                    const card = document.createElement('div');
-                    card.className = 'event-card-modern';
-                    card.innerHTML = `
-                        <div class="event-content-modern">
-                            <h3>${event.title}</h3>
-                            <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
-                            <p class="event-time-modern"><i class="fas fa-clock"></i> ${event.date}</p>
-                            <p class="event-description-modern">${event.description}</p>
-                            <a href="${event.link}" class="btn btn-glass">Register</a>
-                        </div>
-                    `;
-                    timelineContainer.appendChild(card);
-
-                    // Create dot
-                    const dot = document.createElement('div');
-                    dot.className = 'dot';
-                    if (index === 0) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        goToSlide(index);
-                    });
-                    timelineDots.appendChild(dot);
-                });
-
-                // Clone first few cards for infinite loop effect
-                for (let i = 0; i < cardsPerView; i++) {
-                    const clone = timelineContainer.children[i].cloneNode(true);
-                    timelineContainer.appendChild(clone);
-                }
-            }
-
-            // Go to specific slide
-            function goToSlide(index) {
-                currentIndex = index;
-                updateSliderPosition();
-                updateDots();
-            }
-
-            // Update slider position
-            function updateSliderPosition() {
-                const offset = -currentIndex * cardWidth;
-                timelineContainer.style.transform = `translateX(${offset}px)`;
-            }
-
-            // Update active dot
-            function updateDots() {
-                const dots = document.querySelectorAll('.dot');
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === currentIndex % events.length);
-                });
-            }
-
-            // Next slide
-            function nextSlide() {
-                currentIndex++;
-                if (currentIndex >= events.length) {
-                    // When reaching the end, reset to first card smoothly
-                    currentIndex = 0;
-                    timelineContainer.style.transition = 'none';
-                    updateSliderPosition();
-                    // Force reflow
-                    void timelineContainer.offsetWidth;
-                    timelineContainer.style.transition = 'transform 0.5s ease';
-                }
-                updateSliderPosition();
-                updateDots();
-            }
-
-            // Previous slide
-            function prevSlide() {
-                currentIndex--;
-                if (currentIndex < 0) {
-                    // When reaching the start, reset to last card
-                    currentIndex = events.length - 1;
-                    timelineContainer.style.transition = 'none';
-                    updateSliderPosition();
-                    // Force reflow
-                    void timelineContainer.offsetWidth;
-                    timelineContainer.style.transition = 'transform 0.5s ease';
-                }
-                updateSliderPosition();
-                updateDots();
-            }
-
-            // Start auto-scrolling
-            function startAutoScroll() {
-                autoScrollInterval = setInterval(nextSlide, 3000);
-            }
-
-            // Stop auto-scrolling
-            function stopAutoScroll() {
-                clearInterval(autoScrollInterval);
-            }
-
-            // Initialize
-            createEventCards();
-            startAutoScroll();
-
-            // Event listeners
-            nextBtn.addEventListener('click', () => {
-                stopAutoScroll();
-                nextSlide();
-                startAutoScroll();
-            });
-
-            prevBtn.addEventListener('click', () => {
-                stopAutoScroll();
-                prevSlide();
-                startAutoScroll();
-            });
-
-            // Pause auto-scroll on hover
-            timelineContainer.addEventListener('mouseenter', stopAutoScroll);
-            timelineContainer.addEventListener('mouseleave', startAutoScroll);
-
-            // Handle window resize
-            window.addEventListener('resize', function() {
-                updateSliderPosition();
-            });
-
-            // Touch events for mobile swipe
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            timelineContainer.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                stopAutoScroll();
-            });
-
-            timelineContainer.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-                startAutoScroll();
-            });
-
-            function handleSwipe() {
-                const threshold = 50;
-                if (touchEndX < touchStartX - threshold) {
-                    nextSlide();
-                } else if (touchEndX > touchStartX + threshold) {
-                    prevSlide();
-                }
-            }
-        });
-    </script>
-
-
-<!-- Enhanced Gallery Section -->
+<!-- Gallery Section -->
 <div class="gallery-container">
     <div class="gallery-track right">
         <div class="gallery-slide">
-            <img src="./assets/images/1.jpg" alt="Gallery Image">
+            <img src="./assets/images/1.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/2.jpg" alt="Gallery Image">
+            <img src="./assets/images/2.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/3.jpg" alt="Gallery Image">
+            <img src="./assets/images/3.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/4.jpg" alt="Gallery Image">
+            <img src="./assets/images/4.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/5.jpg" alt="Gallery Image">
+            <img src="./assets/images/5.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/6.jpg" alt="Gallery Image">
+            <img src="./assets/images/1.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/7.jpg" alt="Gallery Image">
+            <img src="./assets/images/2.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/8.jpg" alt="Gallery Image">
+            <img src="./assets/images/3.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/9.jpg" alt="Gallery Image">
+            <img src="./assets/images/4.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/10.jpg" alt="Gallery Image">
+            <img src="./assets/images/5.jpg" alt="EECC Club Activity">
         </div>
     </div>
 </div>
@@ -599,83 +240,73 @@ document.addEventListener('DOMContentLoaded', function() {
 <div class="gallery-container">
     <div class="gallery-track left">
         <div class="gallery-slide">
-            <img src="./assets/images/10.jpg" alt="Gallery Image">
+            <img src="./assets/images/6.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/11.jpg" alt="Gallery Image">
+            <img src="./assets/images/7.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/12.jpg" alt="Gallery Image">
+            <img src="./assets/images/8.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/13.jpg" alt="Gallery Image">
+            <img src="./assets/images/9.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/14.jpg" alt="Gallery Image">
+            <img src="./assets/images/10.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/15.jpg" alt="Gallery Image">
+            <img src="./assets/images/1.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/16.jpg" alt="Gallery Image">
+            <img src="./assets/images/2.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/17.jpg" alt="Gallery Image">
+            <img src="./assets/images/3.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/18.jpg" alt="Gallery Image">
+            <img src="./assets/images/4.jpg" alt="EECC Club Activity">
         </div>
         <div class="gallery-slide">
-            <img src="./assets/images/19.jpg" alt="Gallery Image">
+            <img src="./assets/images/5.jpg" alt="EECC Club Activity">
         </div>
     </div>
 </div>
 
-<div class="view-all-container" data-aos="fade-up" style="display: flex; justify-content: center; align-items: center; margin: 32px 0;">
+<div class="view-all-container" data-aos="fade-up">
     <a href="gallery.html" class="btn btn-outlined btn-glass">View Gallery</a>
 </div>
-<style>
-.view-all-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin: 32px 0 !important;
-}
-</style>
 
 <!-- Team Section -->
-<section id="team" class="section team-section">
+<section id="officebearers" class="section team-section">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
-                <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Meet Our</span>
-                <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Faculty</span>
+            <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                <span data-aos="zoom-in" data-aos-delay="300">Meet Our</span>
+                <span class="highlight" data-aos="flip-up" data-aos-delay="500">Faculty</span>
             </h2>
             <div class="underline"></div>
         </div>
         <div class="team-pillar-grid">
             <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="./assets/images/sir.jpg" alt="Alex Johnson" class="pillar-full-img">
+                <img src="./assets/images/sir.jpg" alt="Mr. R. Sathish Raam - Faculty Advisor" class="pillar-full-img">
                 <div class="pillar-overlay">
-                    <h3>Mr.R.Sathish Raam</h3>
-                    <p class="pillar-position">FACULTY ADVISORS</p>
+                    <h3>Mr. R. Sathish Raam</h3>
+                    <p class="pillar-position">FACULTY ADVISOR</p>
                 </div>
             </div>
-            <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="200" style="overflow: hidden;">
-                <img src="./assets/images/mam.jpg" alt="Dr.S.Gomathy" class="pillar-full-img" style="width: 100%; height: 360px; object-fit: cover; object-position: top;">
+            <div class="team-pillar-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="./assets/images/mam.jpg" alt="Dr. S. Gomathy - Faculty Advisor" class="pillar-full-img">
                 <div class="pillar-overlay">
-                    <h3>Dr.S.Gomathy</h3>
-                    <p class="pillar-position">FACULTY ADVISORS</p>
+                    <h3>Dr. S. Gomathy</h3>
+                    <p class="pillar-position">FACULTY ADVISOR</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<div style="max-width: 1400px; margin: 32px auto; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 24px rgba(76,175,80,0.08); background: #fff; aspect-ratio: 9/4; display: flex; justify-content: center; align-items: center;"
-    data-aos="zoom-in" data-aos-duration="1200">
-    
-    <img src="./assets/images/gr.jpg" alt="Group Photo" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+<div class="group-photo-container" data-aos="zoom-in" data-aos-duration="1200">
+    <img src="./assets/images/gr.jpg" alt="EECC Club Group Photo" class="group-photo">
 </div>
 
 <!-- Join Us Section -->
@@ -683,11 +314,12 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="container">
         <div class="join-content">
             <div class="join-text" data-aos="fade-right">
-                <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100" style="letter-spacing: 1px;">
-                    <span data-aos="zoom-in" data-aos-delay="300" style="display: inline-block;">Join Our</span>
-                    <span class="highlight" data-aos="flip-up" data-aos-delay="500" style="display: inline-block; margin-left: 8px;">Mission</span>
+                <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
+                    <span data-aos="zoom-in" data-aos-delay="300">Join Our</span>
+                    <span class="highlight" data-aos="flip-up" data-aos-delay="500">Mission</span>
                 </h2>
-                <p>Become a part of our club and help us make a positive impact on our environment. Together, we can create a sustainable future for all.</p>
+                <p>Become a part of our club and help us make a positive impact on our environment. 
+                    Together, we can create a sustainable future for all.</p>
                 <ul class="benefits-list">
                     <li><i class="fas fa-check-circle"></i> Hands-on environmental projects</li>
                     <li><i class="fas fa-check-circle"></i> Leadership opportunities</li>
@@ -705,8 +337,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <input type="email" id="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                       <select id="department" name="department">
-                            <option value="" disabled selected hidden>Select Department</option>
+                       <select id="department" name="department" required>
+                            <option value="" disabled selected>Select Department</option>
                             <option value="AIDS">AIDS</option>
                             <option value="AIML">AIML</option>
                             <option value="AUTO">AUTO</option>
@@ -737,21 +369,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="form-group">
                         <textarea id="message" name="message" placeholder="Why do you want to join our club?" rows="3" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full" style="position: relative;">
+                    <button type="submit" class="btn btn-primary btn-full">
                       Submit Application
-                      <div id="formLoader" class="form-loader" style="display:none; position: absolute; right: 16px; top: 50%; transform: translateY(-50%);">
+                      <div id="formLoader" class="form-loader">
                         <div class="loader-circle"></div>
                       </div>
                     </button>
                 </form>
-                <div id="formSuccess" style="display: none; text-align: center; margin-top: 20px;">
+                <div id="formSuccess" class="form-success-message">
                     <div class="form-success-checkmark">
                         <svg viewBox="0 0 52 52">
                             <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
                             <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                         </svg>
                     </div>
-                    <h3 style="color: #4CAF50; margin-top: 15px;">Application Submitted!</h3>
+                    <h3>Application Submitted!</h3>
                     <p>We'll get back to you soon.</p>
                 </div>
             </div>
@@ -774,17 +406,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         The Energy and Environment Conservation Club is committed to promoting sustainable practices and creating a greener future for our campus and community.
                     </p>
                     <div class="footer-social">
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" title="Instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="Facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="Twitter" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="footer-widget footer-contact-widget">
                     <h3>Contact Us</h3>
                     <ul class="footer-contact">
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:eecclub@email.com">eecclub@email.com</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=College+Campus,+City,+Country" target="_blank">kongu engineering college </a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:eecclub@kongu.edu">eecclub@kongu.edu</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=Kongu+Engineering+College" target="_blank">Kongu Engineering College</a></li>
                         <li><i class="fas fa-phone"></i> <a href="tel:+1234567890">+123 456 7890</a></li>
                     </ul>
                 </div>
@@ -792,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
         </div>
     </div>
     <div class="footer-bottom glassy-footer-bottom">
-        <div class="container" style="text-align: center;">
+        <div class="container">
             <p>&copy; 2025 <span class="logo-text">Energy and Environment Conservation Club</span> All Rights Reserved.</p>
             <p>Website developed by <a href="https://sakthis30.web.app/" target="_blank">SAKTHIVEL S</a></p>
         </div>
@@ -800,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </footer>
 
 <!-- Back to Top Button -->
-<a href="#home" class="back-to-top" id="backToTop">
+<a href="#home" class="back-to-top" id="backToTop" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
 </a>
 
@@ -808,5 +440,240 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="./js/main.js"></script>
 
+<script>
+// Event data
+const events = [
+    {
+        id: 2,
+        title: "Patriotic Pen",
+        location: "College Campus",
+        date: "2nd week of August 2025",
+        description: "Join us for our India's Role in Environmental Sustainability.",
+        link: "404.html"
+    },
+    {
+        id: 3,
+        title: "Eco Graphica",
+        location: "College Campus",
+        date: "4th week of August 2025",
+        description: "Poster Design Contest on 'Visualizing a Greener Future'.",
+        link: "404.html"
+    },
+    {
+        id: 4,
+        title: "Field Visit",
+        location: "Educational Eco Tour",
+        date: "2nd week of September 2025",
+        description: "Join our educational tour to learn about eco-systems.",
+        link: "404.html"
+    },
+    {
+        id: 5,
+        title: "Technical Symposium",
+        location: "College Auditorium",
+        date: "4th week of September 2025",
+        description: "'E to S' on 'World Sustainable Energy Day'.",
+        link: "404.html"
+    },
+    {
+        id: 6,
+        title: "Hackathon",
+        location: "Tech Lab",
+        date: "1st week of October 2025",
+        description: "'Tech Solutions for Eco Challenges' - Bring your innovative ideas!",
+        link: "404.html"
+    },
+    {
+        id: 7,
+        title: "Guest Lecture & Workshop",
+        location: "Conference Hall",
+        date: "2nd week of October 2025",
+        description: "On 'Water Quality Testing' - Celebrating World Water Day.",
+        link: "404.html"
+    },
+    {
+        id: 8,
+        title: "Eco Quiz Competition",
+        location: "College Campus",
+        date: "4th week of November 2025",
+        description: "'Renewable Energy & Climate Change Awareness'.",
+        link: "404.html"
+    },
+    {
+        id: 9,
+        title: "Eco Quiz Competition",
+        location: "College Campus",
+        date: "4th week of November 2025",
+        description: "'Renewable Energy & Climate Change Awareness'.",
+        link: "404.html"
+    },
+    {
+        id: 10,
+        title: "Eco Quiz Competition",
+        location: "College Campus",
+        date: "4th week of November 2025",
+        description: "'Renewable Energy & Climate Change Awareness'.",
+        link: "404.html"
+    }
+];
+
+// Initialize events timeline
+function initEventsTimeline() {
+    const timelineContainer = document.getElementById('timelineContainer');
+    const timelineDots = document.getElementById('timelineDots');
+    
+    // Clear existing content
+    timelineContainer.innerHTML = '';
+    timelineDots.innerHTML = '';
+    
+    // Create event cards
+    events.forEach((event, index) => {
+        const card = document.createElement('div');
+        card.className = 'event-card-modern';
+        card.innerHTML = `
+            <div class="event-content-modern">
+                <h3>${event.title}</h3>
+                <p class="event-location-modern"><i class="fas fa-map-marker-alt"></i> ${event.location}</p>
+                <p class="event-time-modern"><i class="fas fa-clock"></i> ${event.date}</p>
+                <p class="event-description-modern">${event.description}</p>
+                <a href="${event.link}" class="btn btn-glass">Register</a>
+            </div>
+        `;
+        timelineContainer.appendChild(card);
+        
+        // Create dot
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            goToSlide(index);
+        });
+        timelineDots.appendChild(dot);
+    });
+    
+    // Initialize slider functionality
+    let currentIndex = 0;
+    const cardWidth = 350;
+    const cardsPerView = Math.min(3, Math.floor(window.innerWidth / cardWidth));
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSliderPosition();
+        updateDots();
+    }
+    
+    function updateSliderPosition() {
+        const offset = -currentIndex * cardWidth;
+        timelineContainer.style.transform = `translateX(${offset}px)`;
+    }
+    
+    function updateDots() {
+        const dots = document.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex % events.length);
+        });
+    }
+    
+    // Auto-scroll functionality
+    let autoScrollInterval = setInterval(nextSlide, 3000);
+    
+    function nextSlide() {
+        currentIndex++;
+        if (currentIndex >= events.length) {
+            currentIndex = 0;
+            timelineContainer.style.transition = 'none';
+            updateSliderPosition();
+            void timelineContainer.offsetWidth;
+            timelineContainer.style.transition = 'transform 0.5s ease';
+        }
+        updateSliderPosition();
+        updateDots();
+    }
+    
+    // Pause on hover
+    timelineContainer.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+    timelineContainer.addEventListener('mouseleave', () => {
+        autoScrollInterval = setInterval(nextSlide, 3000);
+    });
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    timelineContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        clearInterval(autoScrollInterval);
+    });
+    
+    timelineContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        autoScrollInterval = setInterval(nextSlide, 3000);
+    });
+    
+    function handleSwipe() {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+            nextSlide();
+        } else if (touchEndX > touchStartX + threshold) {
+            prevSlide();
+        }
+    }
+    
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = events.length - 1;
+            timelineContainer.style.transition = 'none';
+            updateSliderPosition();
+            void timelineContainer.offsetWidth;
+            timelineContainer.style.transition = 'transform 0.5s ease';
+        }
+        updateSliderPosition();
+        updateDots();
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initEventsTimeline();
+    
+    // Handle splash screen
+    const kecSplash = document.getElementById('kecSplash');
+    const regularLoader = document.querySelector('.eec-loader');
+    
+    setTimeout(() => {
+        kecSplash.style.opacity = '0';
+        setTimeout(() => {
+            kecSplash.style.display = 'none';
+            regularLoader.style.display = 'flex';
+            
+            setTimeout(() => {
+                regularLoader.style.opacity = '0';
+                setTimeout(() => {
+                    regularLoader.style.display = 'none';
+                    AOS.init({
+                        duration: 1000,
+                        easing: 'ease-out-quart',
+                        once: false,
+                        mirror: true,
+                        offset: 120,
+                        delay: 100,
+                        anchorPlacement: 'top-bottom',
+                        disable: function() {
+                            return window.innerWidth < 768;
+                        }
+                    });
+                }, 500);
+            }, 1000);
+        }, 800);
+    }, 2500);
+});
+
+// Handle window resize
+window.addEventListener('resize', function() {
+    initEventsTimeline();
+});
+</script>
 </body>
 </html>
