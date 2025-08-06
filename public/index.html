@@ -40,6 +40,16 @@
 </div>
 
 <!-- Regular Loader (will be shown after splash) -->
+  <!--header-->
+ <nav class="navbar">
+    <div class="navbar-container">
+        <div class="logo" >
+            <a href="/public/index.html">
+                <img src="./assets/images/logo/club.png" alt="EEC Logo" class="logo-img" style="width: 80px; height: auto;">
+            </a>
+        </div>
+    </div>
+</nav>
 
 
 <!-- Navigation Bar -->
@@ -83,7 +93,6 @@
         <p>Creating a sustainable future through collective action and environmental awareness</p>
         <div class="cta-buttons">
             <a href="#initiatives" class="btn btn-primary">Our Initiatives</a>
-            <a href="#join" class="btn btn-secondary">Join Us</a>
         </div>
     </div>
     <div class="hero-scroll-indicator">
@@ -129,47 +138,68 @@
 </section>
 
 <!-- Initiatives Section -->
+<!-- Initiatives Section -->
 <section id="initiatives" class="section initiatives-section">
     <div class="container">
-        <div class="section-header" data-aos="fade-up">
+
+        <!-- Section Heading -->
+        <div class="section-header text-center" data-aos="fade-up">
             <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
                 <span data-aos="zoom-in" data-aos-delay="300">Our</span>
                 <span class="highlight" data-aos="flip-up" data-aos-delay="500">Initiatives</span>
             </h2>
-            <div class="underline"></div>
+            <div class="underline" style="width: 60px; height: 4px; background-color: #009688; margin: 0.5rem auto; border-radius: 2px;"></div>
         </div>
-        <div class="initiatives-grid">
-            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="100">
-                <div class="initiative-icon">
-                    <i class="fas fa-solar-panel" aria-hidden="true"></i>
+
+        <!-- ✅ Row 1: 3 cards -->
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 30px;">
+            <div class="initiative-card" style="flex: 1 1 30%; min-width: 250px; max-width: 300px; background: #fff; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" data-aos="zoom-in" data-aos-delay="100">
+                <div class="initiative-icon" style="margin-bottom: 1rem;">
+                    <img src="./assets/images/logo/club.png" alt="Renewable Energy" style="width: 80px; height: auto;">
                 </div>
                 <h3>Renewable Energy</h3>
                 <p>Promoting solar and wind energy adoption through campus installations and community education programs.</p>
             </div>
-            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="200">
-                <div class="initiative-icon">
-                    <i class="fas fa-recycle" aria-hidden="true"></i>
+
+            <div class="initiative-card" style="flex: 1 1 30%; min-width: 250px; max-width: 300px; background: #fff; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" data-aos="zoom-in" data-aos-delay="200">
+                <div class="initiative-icon" style="margin-bottom: 1rem;">
+                    <img src="./assets/images/logo/club.png" alt="Waste Management" style="width: 80px; height: auto;">
                 </div>
                 <h3>Waste Management</h3>
                 <p>Implementing comprehensive recycling programs and organizing zero-waste campaigns on campus.</p>
             </div>
-            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="300">
-                <div class="initiative-icon">
-                    <i class="fas fa-tree" aria-hidden="true"></i>
+
+            <div class="initiative-card" style="flex: 1 1 30%; min-width: 250px; max-width: 300px; background: #fff; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" data-aos="zoom-in" data-aos-delay="300">
+                <div class="initiative-icon" style="margin-bottom: 1rem;">
+                    <img src="./assets/images/logo/club.png" alt="Reforestation" style="width: 80px; height: auto;">
                 </div>
                 <h3>Reforestation</h3>
                 <p>Regular tree planting drives and maintenance of green spaces in and around campus.</p>
             </div>
-            <div class="initiative-card" data-aos="zoom-in" data-aos-delay="400">
-                <div class="initiative-icon">
-                    <i class="fas fa-tint" aria-hidden="true"></i>
+        </div>
+
+        <!-- ✅ Row 2: 2 cards -->
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <div class="initiative-card" style="flex: 1 1 30%; min-width: 250px; max-width: 300px; background: #fff; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" data-aos="zoom-in" data-aos-delay="400">
+                <div class="initiative-icon" style="margin-bottom: 1rem;">
+                    <img src="./assets/images/logo/club.png" alt="Water Conservation" style="width: 80px; height: auto;">
                 </div>
                 <h3>Water Conservation</h3>
                 <p>Watershed management programs and initiatives to reduce water consumption in college facilities.</p>
             </div>
+
+            <div class="initiative-card" style="flex: 1 1 30%; min-width: 250px; max-width: 300px; background: #fff; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" data-aos="zoom-in" data-aos-delay="500">
+                <div class="initiative-icon" style="margin-bottom: 1rem;">
+                    <img src="./assets/images/photo/others/3.jpg" alt="Rally" style="width: 80px; height: auto;">
+                </div>
+                <h3>Rally</h3>
+                <p>Organizing environmental awareness rallies to engage students and promote sustainability in the community.</p>
+            </div>
         </div>
+
     </div>
 </section>
+
 
 <!-- Events Section -->
 <section id="events" class="section events-section">
