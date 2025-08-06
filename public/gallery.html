@@ -129,24 +129,12 @@
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-    
-    <!--header-->
- <nav class="navbar">
-    <div class="navbar-container">
-        <div class="logo" >
-            <a href="/public/index.html">
-                <img src="./assets/images/logo/club.png" alt="EEC Logo" class="logo-img" style="width: 40px; height: auto;">
-            </a>
-        </div>
-    </div>
-</nav>
 
 <div class="eec-loader">
     <div class="eec-loader-inner">
         <div class="eec-loader-circle"></div>
         <div class="eec-loader-circle"></div>
         <div class="eec-loader-circle"></div>
-        <div class="eec-leaf"><i class="fas fa-leaf"></i></div>
     </div>
 </div>
 
@@ -174,13 +162,18 @@
         <div class="flex flex-wrap justify-center gap-4 mb-12" id="filter-buttons">
             <button data-year="all" class="px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-300 bg-green-500 text-white shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">All</button>
             <button data-year="2024" class="px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-300 bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">2024</button>
+            <button data-year="2025" class="px-6 py-2 rounded-full font-semibold text-sm transition-colors duration-300 bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">2025</button>
+       
         </div>
 
         <div class="masonry-grid" id="gallery-grid">
             </div>
 
-        <div class="flex justify-center mt-12" data-aos="fade-up">
-            <a href="#home" class="px-6 py-3 rounded-full text-sm font-semibold transition-colors duration-300 bg-green-500 text-white shadow-md hover:bg-green-600">Back to Top</a>
+        <div class="flex justify-center mt-12" data-aos="fade-up" data-aos-duration="800">
+            <a href="#home" class="px-6 py-3 rounded-full text-sm font-semibold transition-colors duration-300 bg-green-500 text-white shadow-md hover:bg-green-600 animate-bounce"
+               onclick="event.preventDefault(); document.getElementById('home').scrollIntoView({ behavior: 'smooth' });">
+                Back to Top
+            </a>
         </div>
     </div>
 </section>
@@ -208,7 +201,17 @@
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/9.jpg" },
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/10.jpg" },
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/11.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/12.jpg" }
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/12.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/1.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/2.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/3.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/4.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/5.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/6.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/7.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/8.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/9.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/10.jpg" }
             // Add more 2022 images here as needed
         ];
 
