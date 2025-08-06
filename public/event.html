@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Club Events</title>
+    <title>Events - eecclub</title>
     <!-- Favicon -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4472/4472584.png" type="image/png">
+    <link rel="icon" href="./assets/images/logo/club.png" type="image/png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         :root {
             --primary: #2E7D32;
@@ -23,7 +25,7 @@
             --gray: #757575;
             --white: #ffffff;
             --shadow: 0 4px 20px rgba(0,0,0,0.1);
-            --transition: all 0.3s ease;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         body {
@@ -33,8 +35,6 @@
             overflow-x: hidden;
         }
 
-      
-
         .hero {
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
             background-size: cover;
@@ -43,12 +43,21 @@
             padding: 100px 0;
             text-align: center;
             margin-bottom: 50px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero .title-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+            animation: bounce 2s infinite;
         }
 
         .section-title {
             position: relative;
             margin-bottom: 50px;
             text-align: center;
+            animation: fadeInUp 0.8s ease-out;
         }
 
         .section-title h2 {
@@ -67,6 +76,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            animation: scaleX 1s ease-out;
         }
 
         .event-card {
@@ -76,22 +86,29 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             margin-bottom: 30px;
-            height: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInUp 0.5s ease-out;
+            animation-fill-mode: backwards;
         }
 
         .event-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 15px 30px rgba(0,0,0,0.2);
         }
 
-        .event-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .event-body {
             padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .event-date {
@@ -116,6 +133,7 @@
             color: var(--gray);
             font-size: 0.9rem;
             margin-bottom: 15px;
+            flex: 1;
         }
 
         .event-status {
@@ -125,21 +143,25 @@
             font-size: 0.8rem;
             font-weight: 500;
             margin-bottom: 15px;
+            animation: pulse 2s infinite;
         }
 
         .status-upcoming {
             background-color: var(--primary-light);
             color: var(--primary-dark);
+            width: 90px !important;
         }
 
         .status-ongoing {
             background-color: #FFF3E0;
             color: #E65100;
+            width: 90px !important;
         }
 
         .status-completed {
             background-color: #E0E0E0;
             color: var(--gray);
+            width: 100px !important;
         }
 
         .btn-event {
@@ -152,17 +174,54 @@
             transition: var(--transition);
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             text-decoration: none;
+            width: 100%;
         }
 
         .btn-event:hover {
             background-color: var(--primary-dark);
             color: white;
-            transform: translateY(-2px);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .btn-event i {
             margin-left: 5px;
+            transition: var(--transition);
+        }
+
+        .btn-event:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Filter buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 8px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .filter-btn {
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+            background: transparent;
+            color: var(--primary);
+            font-size: 0.85rem;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         /* Modal for featured event */
@@ -180,6 +239,7 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
+            
         }
 
         .modal-overlay.active {
@@ -190,13 +250,14 @@
         .modal-content {
             background-color: var(--white);
             border-radius: 10px;
-            max-width: 800px;
-            width: 90%;
+            max-width: 500px;
+            width: 60%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
             transform: scale(0.9);
             transition: var(--transition);
+            animation: zoomIn 0.3s ease-out forwards;
         }
 
         .modal-overlay.active .modal-content {
@@ -222,17 +283,46 @@
 
         .modal-close:hover {
             background: var(--primary-dark);
-            transform: rotate(90deg);
-        }
-
-        .featured-event-img {
-            width: 100%;
-            max-height: 300px;
-            object-fit: cover;
+            transform: rotate(90deg) scale(1.1);
         }
 
         .featured-event-body {
             padding: 30px;
+        }
+
+        /* Make the ongoing status button smaller and shifted right */
+        .status-ongoing {
+            background-color: #FFF3E0;
+            color: #E65100;
+            width: auto;
+            font-size: 0.75rem;
+            padding: 3px 20px;
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+        .status-upcoming{
+            background-color: #E8F5E9;
+            color: #388E3C;
+            width: auto;
+            font-size: 0.75rem;
+            padding: 3px 20px;
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+        .status-completed {
+            background-color: #E0E0E0;
+            color: var(--gray);
+            width: auto;
+            font-size: 0.75rem;
+            padding: 3px 20px;
+            margin-left: 12px;
+            vertical-align: middle;
+        }
+
+        /* Custom animations */
+        @keyframes scaleX {
+            from { transform: translateX(-50%) scaleX(0); }
+            to { transform: translateX(-50%) scaleX(1); }
         }
 
         /* Responsive styles */
@@ -256,8 +346,9 @@
                 font-size: 1.8rem;
             }
             
-            .event-img {
-                height: 180px;
+            .filter-btn {
+                padding: 5px 12px;
+                font-size: 0.8rem;
             }
         }
 
@@ -270,24 +361,30 @@
                 font-size: 1.5rem;
             }
             
-            .event-img {
-                height: 150px;
-            }
-            
             .featured-event-body {
                 padding: 20px;
+            }
+            
+            .filter-buttons {
+                gap: 5px;
+            }
+            
+            .filter-btn {
+                padding: 4px 10px;
+                font-size: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
-
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1 class="display-4 fw-bold">Upcoming Events</h1>
-            <p class="lead">Join us for exciting activities and memorable experiences</p>
+            <div class="title-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h1 class="display-4 fw-bold">University Events Portal</h1>
+            <p class="lead">Discover and participate in exciting campus activities</p>
         </div>
     </section>
 
@@ -295,148 +392,20 @@
     <section class="events-section py-5">
         <div class="container">
             <div class="section-title">
-                <h2>Our Events</h2>
+                <h2>Upcoming Events</h2>
             </div>
             
-            <div class="row">
-                <!-- Event 1 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Tech Conference">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> June 15, 2024
-                            </div>
-                            <h5 class="event-title">Annual Tech Conference</h5>
-                            <p class="event-description">Join us for a day of innovation and technology with industry leaders.</p>
-                            <span class="event-status status-upcoming">Upcoming</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 2 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Music Festival">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> July 20-22, 2024
-                            </div>
-                            <h5 class="event-title">Summer Music Festival</h5>
-                            <p class="event-description">Three days of live music, food, and fun with your favorite artists.</p>
-                            <span class="event-status status-upcoming">Upcoming</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Hackathon">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> May 5-7, 2024
-                            </div>
-                            <h5 class="event-title">24-Hour Hackathon</h5>
-                            <p class="event-description">Code, create and compete in our annual hackathon challenge.</p>
-                            <span class="event-status status-ongoing">Ongoing</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Workshop">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> April 10, 2024
-                            </div>
-                            <h5 class="event-title">Leadership Workshop</h5>
-                            <p class="event-description">Develop your leadership skills with our expert trainers.</p>
-                            <span class="event-status status-completed">Completed</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                <button class="filter-btn" data-filter="completed">Past</button>
             </div>
             
-            <!-- Second Row of Events -->
-            <div class="row mt-4">
-                <!-- Event 5 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Sports Day">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> August 12, 2024
-                            </div>
-                            <h5 class="event-title">Annual Sports Day</h5>
-                            <p class="event-description">Competitions, games and fun activities for everyone.</p>
-                            <span class="event-status status-upcoming">Upcoming</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 6 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Seminar">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> March 25, 2024
-                            </div>
-                            <h5 class="event-title">Career Development Seminar</h5>
-                            <p class="event-description">Learn how to boost your career from industry experts.</p>
-                            <span class="event-status status-completed">Completed</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 7 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Art Exhibition">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> September 5-15, 2024
-                            </div>
-                            <h5 class="event-title">Student Art Exhibition</h5>
-                            <p class="event-description">Showcasing the creative talents of our students.</p>
-                            <span class="event-status status-upcoming">Upcoming</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Event 8 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="event-card">
-                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" class="event-img" alt="Networking">
-                        <div class="event-body">
-                            <div class="event-date">
-                                <i class="far fa-calendar-alt"></i> February 14, 2024
-                            </div>
-                            <h5 class="event-title">Alumni Networking</h5>
-                            <p class="event-description">Connect with successful alumni from various industries.</p>
-                            <span class="event-status status-completed">Completed</span>
-                            <br>
-                            <a href="#" class="btn-event">View Details <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Events Grid -->
+            <div class="row" id="eventsContainer">
+                <!-- Events will be loaded here dynamically -->
             </div>
         </div>
     </section>
@@ -447,87 +416,357 @@
             <div class="modal-close" id="modalClose">
                 <i class="fas fa-times"></i>
             </div>
-            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="featured-event-img" alt="Featured Event">
             <div class="featured-event-body">
-                <h2>Annual Tech Conference</h2>
-                <div class="event-date my-3">
-                    <i class="far fa-calendar-alt"></i> June 15, 2024 | 
-                    <i class="fas fa-map-marker-alt ms-2"></i> College Auditorium
+                <h2 id="modalEventTitle"></h2>
+                <div class="event-date my-3" id="modalEventDate">
+                    <i class="far fa-calendar-alt"></i> 
+                    <span id="modalDateText"></span> | 
+                    <i class="fas fa-map-marker-alt ms-2"></i> 
+                    <span id="modalLocationText"></span>
                 </div>
-                <p class="event-description">Join us for our flagship event of the year - the Annual Tech Conference 2024. This year's theme is "Innovation for Sustainable Future". We have an exciting lineup of speakers from leading tech companies who will share their insights on emerging technologies.</p>
-                
-               
-                
-               
+                <p class="event-description" id="modalEventDescription"></p>
                 
                 <div class="d-flex justify-content-between mt-4">
-                    <a href="#" class="btn-event">Register Now <i class="fas fa-user-plus"></i></a>
-                   
+                    <a href="#" class="btn-event" id="modalRegisterBtn">Register Now <i class="fas fa-user-plus"></i></a>
+                    <span class="event-status" id="modalEventStatus"></span>
                 </div>
             </div>
         </div>
     </div>
+     <!-- Footer Section -->
+    <footer class="footer text-center py-3 bg-light">
+        <div class="container">
+            <small>&copy; 2025 Members - eecclub.</small>
+        </div>
+    </footer>
 
-    
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
     <script>
-        // Featured Event Modal
+        // Current date for status calculation
+        const currentDate = new Date();
+        currentDate.setHours(0, 0, 0, 0);
+
+        // For demo purposes - set current date to August 6, 2025 to show ongoing event
+        // Remove this line in production
+        currentDate.setFullYear(2025, 7, 6); // Month is 0-indexed (7 = August)
+
+        // Function to convert "1st week of August 2025" to a Date object
+        function parseEventDate(dateString) {
+            const months = {
+                'January': 0, 'February': 1, 'March': 2, 'April': 3,
+                'May': 4, 'June': 5, 'July': 6, 'August': 7,
+                'September': 8, 'October': 9, 'November': 10, 'December': 11
+            };
+            const parts = dateString.split(' ');
+            const week = parseInt(parts[0]);
+            const month = months[parts[3]];
+            const year = parseInt(parts[4]);
+            // Approximate by setting to first day of the week
+            const day = 1 + (week - 1) * 7;
+            return new Date(year, month, day);
+        }
+
+        // Function to determine status
+        function getEventStatus(eventDate) {
+            if (eventDate < currentDate) {
+                return 'completed';
+            } else if (eventDate.toDateString() === currentDate.toDateString()) {
+                return 'ongoing';
+            } else {
+                return 'upcoming';
+            }
+        }
+
+        // Event data with your environmental events
+        const events = [
+            {
+                id: 1,
+                title: "Inauguration ",
+                date: parseEventDate("1st week of August 2025"),
+                description: "Kickoff event with expert lecture on energy conservation and sustainable practices.",
+                location: "Main Auditorium",
+                status: getEventStatus(parseEventDate("1st week of August 2025"))
+            },
+            {
+                id: 2,
+                title: "Patriotic Pen",
+                date: new Date(2025, 7, 15), // August is month 7 (0-indexed)
+                description: "Essay writing competition focusing on India's environmental leadership.",
+                location: "Seminar Hall",
+                status: 'ongoing' // This will be ongoing based on the current date set above
+            },
+            {
+                id: 3,
+                title: "Eco Graphica ",
+                date: parseEventDate("4th week of August 2025"),
+                description: "Creative poster competition showcasing visions for a sustainable future.",
+                location: "Art Department",
+                status: getEventStatus(parseEventDate("4th week of August 2025"))
+            },
+            {
+                id: 4,
+                title: "Field Visit ",
+                date: parseEventDate("2nd week of September 2025"),
+                description: "Hands-on learning experience at local sustainability projects.",
+                location: "Various Locations",
+                status: getEventStatus(parseEventDate("2nd week of September 2025"))
+            },
+            {
+                id: 5,
+                title: "Technical Symposium ",
+                date: parseEventDate("4th week of September 2025"),
+                description: "Technical presentations and discussions on sustainable energy solutions.",
+                location: "Engineering Block",
+                status: getEventStatus(parseEventDate("4th week of September 2025"))
+            },
+            {
+                id: 6,
+                title: "Hackathon ",
+                date: parseEventDate("1st week of October 2025"),
+                description: "24-hour coding challenge to develop solutions for environmental problems.",
+                location: "Computer Center",
+                status: getEventStatus(parseEventDate("1st week of October 2025"))
+            },
+            {
+                id: 7,
+                title: "Guest Lecture & Workshop on Water Quality Testing ",
+                date: parseEventDate("2nd week of October 2025"),
+                description: "Interactive session on water conservation and quality testing techniques.",
+                location: "Chemistry Lab",
+                status: getEventStatus(parseEventDate("2nd week of October 2025"))
+            },
+            {
+                id: 8,
+                title: "Eco Quiz Competition ",
+                date: parseEventDate("4th week of November 2025"),
+                description: "Test your knowledge about renewable energy and climate change in this exciting quiz.",
+                location: "Quiz Hall",
+                status: getEventStatus(parseEventDate("4th week of November 2025"))
+            },
+            {
+                id: 9,
+                title: "Eco Photo Fusion ",
+                date: parseEventDate("1st week of December 2025"),
+                description: "Capture the essence of energy transformation and its environmental effects.",
+                location: "Photography Club",
+                status: getEventStatus(parseEventDate("1st week of December 2025"))
+            },
+            {
+                id: 10,
+                title: "Meme Creation Contest",
+                date: parseEventDate("2nd week of January 2026"),
+                description: "Create humorous yet impactful memes about climate change awareness.",
+                location: "Online Event",
+                status: getEventStatus(parseEventDate("2nd week of January 2026"))
+            },
+            {
+                id: 11,
+                title: "GreenSeape ",
+                date: parseEventDate("2nd week of February 2026"),
+                description: "Hands-on sustainability efforts through campus beautification.",
+                location: "College Campus",
+                status: getEventStatus(parseEventDate("2nd week of February 2026"))
+            },
+            {
+                id: 12,
+                title: "Next Gen Earth ",
+                date: parseEventDate("2nd week of March 2026"),
+                description: "Youth innovation showcase for a greener tomorrow.",
+                location: "Online Platform",
+                status: getEventStatus(parseEventDate("2nd week of March 2026"))
+            },
+            {
+                id: 13,
+                title: "Online Eco Event ",
+                date: parseEventDate("4th week of March 2026"),
+                description: "Virtual discussions about the future of our planet.",
+                location: "Online Event",
+                status: getEventStatus(parseEventDate("4th week of March 2026"))
+            },
+            {
+                id: 14,
+                title: "Orphanage Visit",
+                date: parseEventDate("2nd week of April 2026"),
+                description: "Tree planting, storytelling and donations at local orphanages.",
+                location: "Local Orphanage",
+                status: getEventStatus(parseEventDate("2nd week of April 2026"))
+            },
+            {
+                id: 15,
+                title: "Valedictory Function & Guest Lecture ",
+                date: parseEventDate("1st week of May 2026"),
+                description: "Closing ceremony with keynote on future conservation efforts.",
+                location: "Main Auditorium",
+                status: getEventStatus(parseEventDate("1st week of May 2026"))
+            }
+        ];
+        // DOM Elements
+        const eventsContainer = document.getElementById('eventsContainer');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const featuredModal = document.getElementById('featuredModal');
+        const modalClose = document.getElementById('modalClose');
+
+        // Helper to get the ongoing event (e.g., "Patriotic Pen" essay)
+        function getOngoingEvent() {
+            return events.find(event => event.status === 'ongoing');
+        }
+
+        // Initialize the page
         document.addEventListener('DOMContentLoaded', function() {
-            // Show modal on page load (for demo)
-            setTimeout(function() {
-                document.getElementById('featuredModal').classList.add('active');
+            renderEvents(events);
+
+            // Show modal for ongoing event (essay) if one exists
+            const ongoingEvent = getOngoingEvent();
+            if (ongoingEvent) {
+            setTimeout(() => {
+                showEventModal(ongoingEvent);
             }, 1000);
-            
-            // Close modal
-            document.getElementById('modalClose').addEventListener('click', function() {
-                document.getElementById('featuredModal').classList.remove('active');
-            });
-            
-            // Close modal when clicking outside
-            document.getElementById('featuredModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('active');
-                }
-            });
-            
-            // Make event cards clickable
-            document.querySelectorAll('.event-card').forEach(card => {
-                card.addEventListener('click', function(e) {
-                    // Don't trigger if clicking on a button inside the card
-                    if (!e.target.closest('.btn-event')) {
-                        // In a real implementation, you would show details for this specific event
-                        document.getElementById('featuredModal').classList.add('active');
-                    }
-                });
-            });
-            
-            // Update event statuses based on current date
-            const currentDate = new Date();
-            document.querySelectorAll('.event-date').forEach(dateElement => {
-                const dateText = dateElement.textContent.match(/(\w+ \d{1,2}, \d{4})/)[0];
-                const eventDate = new Date(dateText);
-                
-                const card = dateElement.closest('.event-card');
-                const statusElement = card.querySelector('.event-status');
-                
-                // Remove all status classes
-                statusElement.classList.remove('status-upcoming', 'status-ongoing', 'status-completed');
-                
-                // Add appropriate status class
-                if (eventDate > currentDate) {
-                    statusElement.classList.add('status-upcoming');
-                    statusElement.textContent = 'Upcoming';
-                } else if (eventDate.toDateString() === currentDate.toDateString()) {
-                    statusElement.classList.add('status-ongoing');
-                    statusElement.textContent = 'Ongoing';
-                } else {
-                    statusElement.classList.add('status-completed');
-                    statusElement.textContent = 'Completed';
-                }
+            }
+
+            // Add staggered animation delays to event cards
+            document.querySelectorAll('.event-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
             });
         });
+
+        // Render events to the page
+        function renderEvents(eventsToRender) {
+            eventsContainer.innerHTML = '';
+
+            eventsToRender.forEach((event, index) => {
+            const eventDate = new Date(event.date);
+            const formattedDate = eventDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const statusClass = getStatusClass(event.status);
+            const statusText = getStatusText(event.status);
+
+            // Only show register button for ongoing event (essay)
+            let registerBtnHtml = '';
+            if (event.status === 'ongoing') {
+                registerBtnHtml = `<a href="https://your-form-or-website-link.com" target="_blank" class="btn-event register-btn">Register for Essay <i class="fas fa-user-plus"></i></a>`;
+            }
+
+            const eventCard = document.createElement('div');
+            eventCard.className = 'col-md-6 col-lg-3';
+            eventCard.innerHTML = `
+                <div class="event-card" data-id="${event.id}" style="animation-delay: ${index * 0.1}s">
+                <div class="event-body">
+                    <div class="event-date">
+                    <i class="far fa-calendar-alt"></i> ${formattedDate}
+                    </div>
+                    <h5 class="event-title">${event.title}</h5>
+                    <p class="event-description">${event.description}</p>
+                    <span class="event-status ${statusClass}">${statusText}</span>
+                    ${registerBtnHtml}
+                </div>
+                </div>
+            `;
+
+            eventsContainer.appendChild(eventCard);
+            });
+
+            // Add event listeners to the register buttons
+            document.querySelectorAll('.register-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // For ongoing event, let link open the form/external site
+            });
+            });
+
+            // Add event listeners to the cards for modal
+            document.querySelectorAll('.event-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (!e.target.closest('.register-btn')) {
+                const eventId = parseInt(this.dataset.id);
+                const event = events.find(ev => ev.id === eventId);
+                if (event.status === 'ongoing') {
+                    showEventModal(event);
+                }
+                // Only ongoing event shows modal, others do nothing
+                }
+            });
+            });
+        }
+
+        // Filter events
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+                let filteredEvents = [...events];
+
+                if (filter !== 'all') {
+                    filteredEvents = events.filter(event => event.status === filter);
+                }
+
+                renderEvents(filteredEvents);
+            });
+        });
+
+        // Show event modal
+        function showEventModal(event) {
+            const eventDate = new Date(event.date);
+            const formattedDate = eventDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+
+            const statusClass = getStatusClass(event.status);
+            const statusText = getStatusText(event.status);
+
+            document.getElementById('modalEventTitle').textContent = event.title;
+            document.getElementById('modalDateText').textContent = formattedDate;
+            document.getElementById('modalLocationText').textContent = event.location;
+            document.getElementById('modalEventDescription').textContent = event.description;
+            document.getElementById('modalEventStatus').textContent = statusText;
+            document.getElementById('modalEventStatus').className = `event-status ${statusClass}`;
+
+            // Set up modal register button
+            document.getElementById('modalRegisterBtn').onclick = function(e) {
+                e.preventDefault();
+                window.open(`https://sakthis30.web.app?event=${encodeURIComponent(event.title)}`, '_blank');
+            };
+
+            featuredModal.classList.add('active');
+        }
+
+        // Close modal
+        modalClose.addEventListener('click', function() {
+            featuredModal.classList.remove('active');
+        });
+
+        // Close modal when clicking outside
+        featuredModal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+
+        // Helper functions
+        function getStatusClass(status) {
+            return {
+                upcoming: 'status-upcoming',
+                ongoing: 'status-ongoing',
+                completed: 'status-completed'
+            }[status];
+        }
+
+        function getStatusText(status) {
+            return {
+                upcoming: 'Upcoming',
+                ongoing: 'Ongoing',
+                completed: 'Completed'
+            }[status];
+        }
     </script>
 </body>
 </html>

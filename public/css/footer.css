@@ -273,22 +273,28 @@
 /* Footer Bottom */
 .footer-bottom {
     background: var(--footer-dark);
-    padding: 1.5rem 0;
+    padding: 1.0rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-bottom-content {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    text-align: left;
     gap: 0.8rem;
 }
 
-.footer-bottom p {
-    margin: 0;
+.footer-bottom-left {
     font-size: 0.85rem;
     color: var(--footer-light);
+    margin: 0;
+}
+
+.footer-bottom-right {
+    font-size: 0.85rem;
+    color: var(--footer-light);
+    margin: 0;
 }
 
 .footer-credits a {
@@ -300,7 +306,18 @@
 
 .footer-credits a:hover {
     color: var(--footer-text);
-    text-decoration: underline;
+}
+
+/* Hide right credits on mobile */
+@media (max-width: 768px) {
+    .footer-bottom-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .footer-bottom-right {
+        display: none;
+    }
 }
 
 /* Responsive Styles */
