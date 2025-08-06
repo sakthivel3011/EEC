@@ -3,284 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KEC - Green Policy</title>
+    <title>Green Policy - eecclub</title>
+    <link rel="icon" href="./assets/images/logo/club.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        :root {
+            --primary-color: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary-color: #81c784;
+            --accent-color: #ffab00;
+            --accent-dark: #ff8f00;
+            --text-color: #333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+        }
+        
+        * {
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            color: #333;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
         
-        /* Navigation Bar */
-        .navbar {
-            background-color: #2E8B57;
-            padding: 1rem;
-            position: relative;
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-color);
+            line-height: 1.8;
+            overflow-x: hidden;
         }
         
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
+        .container {
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
         }
         
-        .logo {
+        header {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));
             color: white;
-            font-weight: bold;
-            font-size: 1.5rem;
-            text-decoration: none;
+            padding: 80px 20px;
+            text-align: center;
+            grid-column: 1 / -1;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
-        .policy-btn {
-            background-color: #3CB371;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        
-        .policy-btn:hover {
-            background-color: #228B22;
-        }
-        
-        /* Policy Modal */
-        .policy-modal {
-            display: none;
-            position: fixed;
+        header::before {
+            content: '';
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            overflow-y: auto;
+            background: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&q=80&w=1000') no-repeat center center;
+            background-size: cover;
+            opacity: 0.15;
+            z-index: 0;
         }
         
-        .modal-content {
-            background-color: #f9f9f9;
-            margin: 2rem auto;
-            padding: 2rem;
-            border-radius: 8px;
-            max-width: 800px;
-            width: 90%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        header > * {
             position: relative;
+            z-index: 1;
         }
         
-        .close-btn {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .subtitle {
             font-size: 1.5rem;
-            cursor: pointer;
-            color: #777;
-            background: none;
-            border: none;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease-out 0.3s both;
         }
         
-        .close-btn:hover {
-            color: #333;
+        .leaf-icon {
+            font-size: 2rem;
+            margin: 20px 0;
+            color: var(--accent-color);
+            animation: bounce 2s infinite;
         }
         
-        .policy-title {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-        
-        .policy-title h1 {
-            color: #2E8B57;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .policy-title .subtitle {
-            color: #555;
-            font-size: 1.1rem;
-            font-style: italic;
-        }
-        
-        .policy-header {
-            color: #2E8B57;
-            border-bottom: 2px solid #3CB371;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
+        .policy-column {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
         
         .policy-section {
-            margin-bottom: 2rem;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
         
-        .policy-section h3 {
-            color: #2E8B57;
-            margin-bottom: 0.5rem;
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
         }
         
-        .policy-points {
+        .policy-section:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+        
+        .policy-section:nth-child(2) {
+            animation-delay: 0.7s;
+        }
+        
+        .policy-section:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--secondary-color);
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        ul {
             list-style-type: none;
-            padding-left: 0;
         }
         
-        .policy-points li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+        li {
+            margin-bottom: 20px;
+            padding-left: 30px;
             position: relative;
-            padding-left: 1.5rem;
+            font-size: 1.05rem;
+            transition: var(--transition);
         }
         
-        .policy-points li:before {
-            content: "•";
-            color: #3CB371;
-            font-weight: bold;
+        li:hover {
+            color: var(--primary-dark);
+        }
+        
+        li::before {
+            content: '🌱';
+            color: var(--accent-color);
             position: absolute;
             left: 0;
+            font-weight: bold;
+            transition: var(--transition);
         }
         
-        .show-more-btn {
-            background-color: #3CB371;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-top: 1rem;
-            display: inline-block;
+        li:hover::before {
+            transform: rotate(15deg) scale(1.2);
         }
         
-        .show-more-btn:hover {
-            background-color: #228B22;
+       
+        
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .hidden-points {
-            display: none;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .modal-content {
-                padding: 1.5rem;
-                width: 95%;
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 900px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
             
-            .policy-title h1 {
-                font-size: 1.8rem;
+            header {
+                padding: 60px 20px;
             }
             
-            .policy-title .subtitle {
-                font-size: 1rem;
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">KEC</a>
-            <button class="policy-btn" id="policyBtn">Green Policy</button>
-        </div>
-    </nav>
+
     
-    <!-- Main Content would go here -->
-    
-    <!-- Green Policy Modal -->
-    <div class="policy-modal" id="policyModal">
-        <div class="modal-content">
-            <button class="close-btn" id="closeBtn">&times;</button>
+    <main class="container">
+        <div class="policy-column">
+            <section class="policy-section">
+                <h2>Objective</h2>
+                <p>The objective of the green policy is to include the scope and create awareness about the need for energy and environmental conservation in all aspects of the decision made by the stake holders of KEC.</p>
+                <p>We aim to foster a culture of sustainability that permeates every level of our institution, from daily operations to long-term strategic planning.</p>
+            </section>
             
-            <div class="policy-title">
-                <h1>KEC Green Policy</h1>
-                <div class="subtitle">Commitment to Environmental Sustainability and Energy Conservation</div>
-            </div>
-            
-            <div class="policy-section">
-                <h3 class="policy-header">Objective:</h3>
-                <p>The objective of the green policy is to include the scope and create awareness about the need for energy and environmental conservation in all aspects of the decision made by the stake holders of KEC</p>
-            </div>
-            
-            <div class="policy-section">
-                <h3 class="policy-header">General Principles:</h3>
-                <ul class="policy-points" id="generalPoints">
+            <section class="policy-section">
+                <h2>General</h2>
+                <ul>
                     <li>The green policy ensures that volunteers are well catered and treated with due respect; and the volunteer management is in line with legal requirements and volunteering principles.</li>
                     <li>The green policy values the role of the members as essential to the organisation. Members are respected for their skills and talents.</li>
-                    <li>The green policy provides a safe and healthy workplace.</li>
-                    <li class="hidden-points">Additional general policy points would appear here when "Show More" is clicked</li>
+                    <li>The green policy provides a safe and healthy workplace that prioritizes environmental responsibility alongside employee wellbeing.</li>
+                    <li>Regular sustainability audits will be conducted to measure our environmental impact and identify areas for improvement.</li>
                 </ul>
-                <button class="show-more-btn" id="showGeneralMore">Show More</button>
-            </div>
-            
-            <div class="policy-section">
-                <h3 class="policy-header">Technical Implementation:</h3>
-                <ul class="policy-points" id="technicalPoints">
+            </section>
+        </div>
+        
+        <div class="policy-column">
+            <section class="policy-section">
+                <h2>Technical</h2>
+                <ul>
                     <li>The goal of this policy is to raise the general public's consciousness and prepare them for the efficient management of all types of energy.</li>
                     <li>In addition, it ensures the following management such as rainwater harvesting, waste management; minimize energy utilization in daily basis.</li>
-                    <li>It encourages energy efficiency and conservation among the stakeholders and the public.</li>
-                    <div class="hidden-points">
-                        <li>Program Outcome carrying Environment and sustainability is included in the institutional regulations and in all the departments' individual program outcomes (PO-7).</li>
-                        <li>In addition, "Environmental Science" paper is included as the mandatory paper in the first year of all the department students.</li>
-                        <li>To establish new energy sources and novel energy technologies with a view to increasing development and promoting the sustainable use of energy.</li>
-                        <li>The policy indeed keen to spread this message to society by organising public awareness programmes.</li>
-                        <li>The policy promotes interdisciplinary approaches for real-time problems related to energy, environment and management.</li>
-                        <li>The policy educates the members to promote collaboration, networking with various other clubs and manufacture products in concern with environment.</li>
-                        <li>The policy encourages the members to bring up ideas for energy and environment development and propose the same for various funding agencies.</li>
-                    </div>
+                    <li>It encourages energy efficiency and conservation among the stakeholders and the public through workshops and demonstration projects.</li>
+                    <li>Program Outcome carrying Environment and sustainability is included in the institutional regulations and in all the departments' individual program outcomes (PO-7).</li>
+                    <li>In addition, "Environmental Science" paper is included as the mandatory paper in the first year of all the department students.</li>
+                    <li>To establish new energy sources and novel energy technologies with a view to increasing development and promoting the sustainable use of energy.</li>
+                    <li>The policy indeed keen to spread this message to society by organising public awareness programmes and community engagement initiatives.</li>
+                    
+                    
                 </ul>
-                <button class="show-more-btn" id="showTechnicalMore">Show More</button>
-            </div>
+            </section>
         </div>
-    </div>
+    </main>
+        <footer class="footer text-center py-3 bg-light">
+        <div class="container">
+            <small>&copy; 2025 Green Policy - eecclub.</small>
+        </div>
+    </footer>
     
+
+
     <script>
-        // Modal functionality
-        const policyBtn = document.getElementById('policyBtn');
-        const policyModal = document.getElementById('policyModal');
-        const closeBtn = document.getElementById('closeBtn');
-        
-        policyBtn.addEventListener('click', () => {
-            policyModal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        });
-        
-        closeBtn.addEventListener('click', () => {
-            policyModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        });
-        
-        window.addEventListener('click', (e) => {
-            if (e.target === policyModal) {
-                policyModal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // Show more functionality
-        const showGeneralMore = document.getElementById('showGeneralMore');
-        const generalPoints = document.getElementById('generalPoints');
-        
-        showGeneralMore.addEventListener('click', () => {
-            const hiddenPoints = generalPoints.querySelectorAll('.hidden-points');
-            hiddenPoints.forEach(point => {
-                point.style.display = 'list-item';
+        // Additional animation triggers on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const policySections = document.querySelectorAll('.policy-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            policySections.forEach(section => {
+                observer.observe(section);
             });
-            showGeneralMore.style.display = 'none';
-        });
-        
-        const showTechnicalMore = document.getElementById('showTechnicalMore');
-        const technicalPoints = document.getElementById('technicalPoints');
-        
-        showTechnicalMore.addEventListener('click', () => {
-            const hiddenPoints = technicalPoints.querySelectorAll('.hidden-points');
-            hiddenPoints.forEach(point => {
-                point.style.display = 'list-item';
+            
+            // Add hover effect to policy sections
+            policySections.forEach(section => {
+                section.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+                section.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
             });
-            showTechnicalMore.style.display = 'none';
         });
     </script>
 </body>
