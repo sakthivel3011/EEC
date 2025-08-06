@@ -109,15 +109,6 @@
             top: 30px;
             left: 30px;
         }
-        .eec-leaf {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--primary-color);
-            font-size: 2.5rem;
-            animation: bounce 1.2s ease-in-out infinite;
-        }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
@@ -183,13 +174,11 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Gallery Data with Years, referencing your local folder structure
         const galleryItems = [
-            // 2024 Images
             { title: "Tree Planting Day", description: "Annual campus tree planting event", year: 2024, imgUrl: "assets/images/photo/2024/1.jpg" },
             { title: "Recycling Project", description: "Students working on waste management", year: 2024, imgUrl: "assets/images/photo/2024/2.jpg" },
             { title: "Environmental Seminar", description: "Guest speaker discussing sustainability", year: 2024, imgUrl: "assets/images/photo/2024/3.jpg" },
             { title: "Beach Cleanup", description: "Community service activity", year: 2024, imgUrl: "assets/images/photo/2024/6.jpg" },
             { title: "Eco Workshop", description: "Students learning sustainable practices", year: 2024, imgUrl: "assets/images/photo/2024/4.jpg" },
-            // Add more 2024 images here as needed
             { title: "Campus Nature", description: "Beautiful greenery around our college",  imgUrl: "assets/images/photo/others/1.jpg" },
             { title: "Club Members", description: "Our dedicated team of volunteers",  imgUrl: "assets/images/photo/others/2.jpg" },
             { title: "Local Wildlife", description: "Biodiversity around our campus",  imgUrl: "assets/images/photo/others/3.jpg" },
@@ -202,16 +191,19 @@
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/10.jpg" },
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/11.jpg" },
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/12.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/1.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/2.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/3.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/4.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/5.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/6.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/7.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/8.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/9.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/2025/10.jpg" }
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/21.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/20.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/3.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/4.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/5.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/16.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/7.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/8.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/9.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/10.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/11.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/23.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/25.jpg" }
             // Add more 2022 images here as needed
         ];
 
