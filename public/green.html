@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEC - Green Policy</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            background-color: #2E8B57;
+            padding: 1rem;
+            position: relative;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .policy-btn {
+            background-color: #3CB371;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .policy-btn:hover {
+            background-color: #228B22;
+        }
+        
+        /* Policy Modal */
+        .policy-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: #f9f9f9;
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+            background: none;
+            border: none;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .policy-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-title h1 {
+            color: #2E8B57;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-title .subtitle {
+            color: #555;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        .policy-header {
+            color: #2E8B57;
+            border-bottom: 2px solid #3CB371;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-section {
+            margin-bottom: 2rem;
+        }
+        
+        .policy-section h3 {
+            color: #2E8B57;
+            margin-bottom: 0.5rem;
+        }
+        
+        .policy-points {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .policy-points li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .policy-points li:before {
+            content: "•";
+            color: #3CB371;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .show-more-btn {
+            background-color: #3CB371;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        
+        .show-more-btn:hover {
+            background-color: #228B22;
+        }
+        
+        .hidden-points {
+            display: none;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 1.5rem;
+                width: 95%;
+            }
+            
+            .policy-title h1 {
+                font-size: 1.8rem;
+            }
+            
+            .policy-title .subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">KEC</a>
+            <button class="policy-btn" id="policyBtn">Green Policy</button>
+        </div>
+    </nav>
+    
+    <!-- Main Content would go here -->
+    
+    <!-- Green Policy Modal -->
+    <div class="policy-modal" id="policyModal">
+        <div class="modal-content">
+            <button class="close-btn" id="closeBtn">&times;</button>
+            
+            <div class="policy-title">
+                <h1>KEC Green Policy</h1>
+                <div class="subtitle">Commitment to Environmental Sustainability and Energy Conservation</div>
+            </div>
+            
+            <div class="policy-section">
+                <h3 class="policy-header">Objective:</h3>
+                <p>The objective of the green policy is to include the scope and create awareness about the need for energy and environmental conservation in all aspects of the decision made by the stake holders of KEC</p>
+            </div>
+            
+            <div class="policy-section">
+                <h3 class="policy-header">General Principles:</h3>
+                <ul class="policy-points" id="generalPoints">
+                    <li>The green policy ensures that volunteers are well catered and treated with due respect; and the volunteer management is in line with legal requirements and volunteering principles.</li>
+                    <li>The green policy values the role of the members as essential to the organisation. Members are respected for their skills and talents.</li>
+                    <li>The green policy provides a safe and healthy workplace.</li>
+                    <li class="hidden-points">Additional general policy points would appear here when "Show More" is clicked</li>
+                </ul>
+                <button class="show-more-btn" id="showGeneralMore">Show More</button>
+            </div>
+            
+            <div class="policy-section">
+                <h3 class="policy-header">Technical Implementation:</h3>
+                <ul class="policy-points" id="technicalPoints">
+                    <li>The goal of this policy is to raise the general public's consciousness and prepare them for the efficient management of all types of energy.</li>
+                    <li>In addition, it ensures the following management such as rainwater harvesting, waste management; minimize energy utilization in daily basis.</li>
+                    <li>It encourages energy efficiency and conservation among the stakeholders and the public.</li>
+                    <div class="hidden-points">
+                        <li>Program Outcome carrying Environment and sustainability is included in the institutional regulations and in all the departments' individual program outcomes (PO-7).</li>
+                        <li>In addition, "Environmental Science" paper is included as the mandatory paper in the first year of all the department students.</li>
+                        <li>To establish new energy sources and novel energy technologies with a view to increasing development and promoting the sustainable use of energy.</li>
+                        <li>The policy indeed keen to spread this message to society by organising public awareness programmes.</li>
+                        <li>The policy promotes interdisciplinary approaches for real-time problems related to energy, environment and management.</li>
+                        <li>The policy educates the members to promote collaboration, networking with various other clubs and manufacture products in concern with environment.</li>
+                        <li>The policy encourages the members to bring up ideas for energy and environment development and propose the same for various funding agencies.</li>
+                    </div>
+                </ul>
+                <button class="show-more-btn" id="showTechnicalMore">Show More</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Modal functionality
+        const policyBtn = document.getElementById('policyBtn');
+        const policyModal = document.getElementById('policyModal');
+        const closeBtn = document.getElementById('closeBtn');
+        
+        policyBtn.addEventListener('click', () => {
+            policyModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            policyModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target === policyModal) {
+                policyModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Show more functionality
+        const showGeneralMore = document.getElementById('showGeneralMore');
+        const generalPoints = document.getElementById('generalPoints');
+        
+        showGeneralMore.addEventListener('click', () => {
+            const hiddenPoints = generalPoints.querySelectorAll('.hidden-points');
+            hiddenPoints.forEach(point => {
+                point.style.display = 'list-item';
+            });
+            showGeneralMore.style.display = 'none';
+        });
+        
+        const showTechnicalMore = document.getElementById('showTechnicalMore');
+        const technicalPoints = document.getElementById('technicalPoints');
+        
+        showTechnicalMore.addEventListener('click', () => {
+            const hiddenPoints = technicalPoints.querySelectorAll('.hidden-points');
+            hiddenPoints.forEach(point => {
+                point.style.display = 'list-item';
+            });
+            showTechnicalMore.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

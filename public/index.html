@@ -46,7 +46,7 @@
 <nav class="navbar">
     <div class="navbar-container">
         <div class="logo">
-            <a href="#home">
+            <a href="https://kongu.ac.in">
                 <img src="./assets/images/logo/clg.png" alt="Kongu Engineering College Logo" class="logo-img">
                 <span class="logo-text">KONGU ENGINEERING COLLEGE</span>
             </a>
@@ -54,14 +54,14 @@
         <ul class="nav-menu">
             
             <li>
-                <a href="#events" class="nav-link hover-effect-1" id="blink-circle-link">
+                <a href="events.html" class="nav-link hover-effect-1" id="blink-circle-link">
                     Events
                     <span class="blink-circle"></span>
                 </a>
             </li>
             <li><a href="gallery.html" class="nav-link hover-effect-1">Gallery</a></li>
-            <li><a href="#officebearers" class="nav-link hover-effect-1">Office Bearers</a></li>
-            <li><a href="#members" class="nav-link hover-effect-1">Members</a></li>
+            <li><a href="officebearers.html" class="nav-link hover-effect-1">Office Bearers</a></li>
+            <li><a href="green.html" class="nav-link hover-effect-1">Green Policy</a></li>
         </ul>
         <button class="nav-toggle" id="mobileMenu" aria-label="Toggle navigation menu">
             <span class="bar"></span>
@@ -196,7 +196,7 @@
             </div>
             
             <div class="view-all-container">
-                <a href="#events" class="btn btn-primary btn-glass">View All Events</a>
+                <a href="event.html" class="btn btn-primary btn-glass">View All Events</a>
             </div>
         </div>
     </div>
@@ -309,111 +309,6 @@
 <div class="group-photo-container" data-aos="zoom-in" data-aos-duration="1200">
     <img src="./assets/images/group/2K25.jpg" alt="EECC Club Group Photo" class="group-photo">
 </div>
-
-<!-- Join Us Section -->
-<section id="join" class="section join-section">
-    <div class="container">
-        <div class="join-content">
-            <div class="join-text" data-aos="fade-right">
-                <h2 data-aos="fade-up" data-aos-duration="1200" data-aos-delay="100">
-                    <span data-aos="zoom-in" data-aos-delay="300">Join Our</span>
-                    <span class="highlight" data-aos="flip-up" data-aos-delay="500">Mission</span>
-                </h2>
-                <p>Become a part of our club and help us make a positive impact on our environment. 
-                    Together, we can create a sustainable future for all.</p>
-                <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> Hands-on environmental projects</li>
-                    <li><i class="fas fa-check-circle"></i> Leadership opportunities</li>
-                    <li><i class="fas fa-check-circle"></i> Networking with like-minded individuals</li>
-                    <li><i class="fas fa-check-circle"></i> Access to workshops and seminars</li>
-                </ul>
-                <div class="join-contact-buttons-modern" style="margin-top:2.5rem; display:flex; flex-wrap:wrap; gap:1.2rem;">
-                    <a href="mailto:eecclub@kongu.ac.in" class="contact-btn-modern join-social-btn" title="Mail Us">
-                        <span class="icon-circle" style="background:#0072c6;"><i class="fas fa-envelope"></i></span>
-                        <span class="btn-label">Mail Us</span>
-                    </a>
-                    <a href="https://instagram.com/" target="_blank" class="contact-btn-modern join-social-btn" title="Instagram">
-                        <span class="icon-circle" style="background:#e4405f;"><i class="fab fa-instagram"></i></span>
-                        <span class="btn-label">Instagram</span>
-                    </a>
-                    <a href="https://youtube.com/" target="_blank" class="contact-btn-modern join-social-btn" title="YouTube">
-                        <span class="icon-circle" style="background:#ff0000;"><i class="fab fa-youtube"></i></span>
-                        <span class="btn-label">YouTube</span>
-                    </a>
-                    <a href="https://facebook.com/" target="_blank" class="contact-btn-modern join-social-btn" title="Facebook">
-                        <span class="icon-circle" style="background:#1877f3;"><i class="fab fa-facebook-f"></i></span>
-                        <span class="btn-label">Facebook</span>
-                    </a>
-                </div>
-                <style>
-              
-                </style>
-            </div>
-            <div class="join-form" data-aos="fade-left">
-                <form id="membershipForm">
-                    <h3>Membership Application</h3>
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Full Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                       <select id="department" name="department" required>
-                            <option value="" disabled selected>Select Department</option>
-                            <option value="AIDS">AIDS</option>
-                            <option value="AIML">AIML</option>
-                            <option value="AUTO">AUTO</option>
-                            <option value="CHE">CHE</option>
-                            <option value="CIVIL">CIVIL</option>
-                            <option value="CSD">CSD</option>
-                            <option value="CSE">CSE</option>
-                            <option value="EEE">EEE</option>
-                            <option value="ECE">ECE</option>
-                            <option value="EIE">EIE</option>
-                            <option value="FT">FT</option>
-                            <option value="IT">IT</option>
-                            <option value="MECH">MECH</option>
-                            <option value="MTS">MTS</option>
-                            <option value="OTHER">OTHER</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <select id="year" name="year" required>
-                            <option value="" disabled selected>Year of Study</option>
-                            <option value="1">First Year</option>
-                            <option value="2">Second Year</option>
-                            <option value="3">Third Year</option>
-                            <option value="4">Fourth Year</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Why do you want to join our club?" rows="3" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">
-                      Submit Application
-                      <div id="formLoader" class="form-loader">
-                        <div class="loader-circle"></div>
-                      </div>
-                    </button>
-                </form>
-                <div id="formSuccess" class="form-success-message">
-                    <div class="form-success-checkmark">
-                        <svg viewBox="0 0 52 52">
-                            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-                            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                        </svg>
-                    </div>
-                    <h3>Application Submitted!</h3>
-                    <p>We'll get back to you soon.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="toast" class="toast"></div>
-</section>
-
 <!-- Modern Footer -->
 <footer class="footer">
     
