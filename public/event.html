@@ -36,26 +36,29 @@
         }
 
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80');
+            background: url('./assets/images/design/ev.jpg') no-repeat center center;
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 0;
+            padding: 80px 0;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             animation: fadeIn 1s ease-out;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero .title-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--accent);
-            animation: bounce 2s infinite;
+        .hero .container {
+            max-width: 1200px;
+            width: 100%;
+            padding: 0 15px;
         }
 
         .section-title {
             position: relative;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-align: center;
             animation: fadeInUp 0.8s ease-out;
         }
@@ -65,6 +68,8 @@
             color: var(--primary-dark);
             display: inline-block;
             padding-bottom: 10px;
+            margin: 0;
+            font-size: 2rem;
         }
 
         .section-title h2:after {
@@ -85,23 +90,18 @@
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
-            margin-bottom: 30px;
-            height: 90%;
+            margin-bottom: 25px;
+            height: 100%;
             display: flex;
             flex-direction: column;
             animation: fadeInUp 0.5s ease-out;
             animation-fill-mode: backwards;
+            border: none;
         }
 
         .event-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         .event-body {
@@ -114,61 +114,65 @@
         .event-date {
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
+            font-size: 0.9rem;
         }
 
         .event-date i {
             margin-right: 8px;
+            font-size: 0.9rem;
         }
 
         .event-title {
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             color: var(--dark);
+            font-size: 1.1rem;
+            line-height: 1.3;
         }
 
         .event-description {
             color: var(--gray);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-bottom: 15px;
             flex: 1;
+            line-height: 1.5;
         }
 
         .event-status {
             display: inline-block;
-            padding: 5px 10px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 500;
             margin-bottom: 15px;
-            animation: pulse 2s infinite;
         }
 
         .status-upcoming {
-            background-color: var(--primary-light);
-            color: var(--primary-dark);
-            width: 90px !important;
+            background-color: #E8F5E9;
+            color: #388E3C;
+            width: fit-content;
         }
 
         .status-ongoing {
             background-color: #FFF3E0;
             color: #E65100;
-            width: 90px !important;
+            width: fit-content;
         }
 
         .status-completed {
             background-color: #E0E0E0;
             color: var(--gray);
-            width: 100px !important;
+            width: fit-content;
         }
 
         .btn-event {
             background-color: var(--primary);
             color: white;
             border: none;
-            padding: 8px 20px;
+            padding: 8px 15px;
             border-radius: 5px;
             font-weight: 500;
             transition: var(--transition);
@@ -177,22 +181,20 @@
             justify-content: center;
             text-decoration: none;
             width: 100%;
+            font-size: 0.85rem;
         }
 
         .btn-event:hover {
             background-color: var(--primary-dark);
             color: white;
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .btn-event i {
             margin-left: 5px;
             transition: var(--transition);
-        }
-
-        .btn-event:hover i {
-            transform: translateX(3px);
+            font-size: 0.8rem;
         }
 
         /* Filter buttons */
@@ -214,7 +216,8 @@
             border: 2px solid var(--primary);
             background: transparent;
             color: var(--primary);
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            margin: 2px;
         }
 
         .filter-btn.active, .filter-btn:hover {
@@ -239,7 +242,6 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
-            
         }
 
         .modal-overlay.active {
@@ -250,8 +252,8 @@
         .modal-content {
             background-color: var(--white);
             border-radius: 10px;
+            width: 90%;
             max-width: 500px;
-            width: 60%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
@@ -283,40 +285,11 @@
 
         .modal-close:hover {
             background: var(--primary-dark);
-            transform: rotate(90deg) scale(1.1);
+            transform: rotate(90deg);
         }
 
         .featured-event-body {
-            padding: 30px;
-        }
-
-        /* Make the ongoing status button smaller and shifted right */
-        .status-ongoing {
-            background-color: #FFF3E0;
-            color: #E65100;
-            width: auto;
-            font-size: 0.75rem;
-            padding: 3px 20px;
-            margin-left: 12px;
-            vertical-align: middle;
-        }
-        .status-upcoming{
-            background-color: #E8F5E9;
-            color: #388E3C;
-            width: auto;
-            font-size: 0.75rem;
-            padding: 3px 20px;
-            margin-left: 12px;
-            vertical-align: middle;
-        }
-        .status-completed {
-            background-color: #E0E0E0;
-            color: var(--gray);
-            width: auto;
-            font-size: 0.75rem;
-            padding: 3px 20px;
-            margin-left: 12px;
-            vertical-align: middle;
+            padding: 25px;
         }
 
         /* Custom animations */
@@ -326,52 +299,61 @@
         }
 
         /* Responsive styles */
-        @media (max-width: 992px) {
+        @media (min-width: 576px) {
             .hero {
-                padding: 80px 0;
+                min-height: 300px;
+                padding: 100px 0;
             }
             
             .event-card {
-                margin-bottom: 25px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 60px 0;
                 margin-bottom: 30px;
             }
             
-            .section-title h2 {
-                font-size: 1.8rem;
+            .event-title {
+                font-size: 1.2rem;
             }
             
-            .filter-btn {
-                padding: 5px 12px;
-                font-size: 0.8rem;
+            .event-description {
+                font-size: 0.9rem;
+            }
+            
+            .btn-event {
+                padding: 8px 20px;
+                font-size: 0.9rem;
             }
         }
 
-        @media (max-width: 576px) {
+        @media (min-width: 768px) {
             .hero {
-                padding: 50px 0;
+                min-height: 350px;
+                margin-bottom: 40px;
             }
             
             .section-title h2 {
-                font-size: 1.5rem;
-            }
-            
-            .featured-event-body {
-                padding: 20px;
-            }
-            
-            .filter-buttons {
-                gap: 5px;
+                font-size: 2.2rem;
             }
             
             .filter-btn {
-                padding: 4px 10px;
-                font-size: 0.75rem;
+                padding: 6px 18px;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .hero {
+                min-height: 400px;
+                padding: 120px 0;
+                margin-bottom: 50px;
+            }
+            
+            .section-title {
+                margin-bottom: 50px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .hero {
+                min-height: 450px;
             }
         }
     </style>
@@ -380,16 +362,12 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="title-icon">
-                <i class="fas fa-calendar-alt"></i>
-            </div>
-            <h1 class="display-4 fw-bold">University Events Portal</h1>
-            <p class="lead">Discover and participate in exciting campus activities</p>
+            <!-- Hero content can be added here if needed -->
         </div>
     </section>
 
     <!-- Events Section -->
-    <section class="events-section py-5">
+    <section class="events-section py-4 py-md-5">
         <div class="container">
             <div class="section-title">
                 <h2>Upcoming Events</h2>
@@ -404,7 +382,7 @@
             </div>
             
             <!-- Events Grid -->
-            <div class="row" id="eventsContainer">
+            <div class="row g-3 g-md-4" id="eventsContainer">
                 <!-- Events will be loaded here dynamically -->
             </div>
         </div>
@@ -417,23 +395,24 @@
                 <i class="fas fa-times"></i>
             </div>
             <div class="featured-event-body">
-                <h2 id="modalEventTitle"></h2>
+                <h2 id="modalEventTitle" class="h4 mb-3"></h2>
                 <div class="event-date my-3" id="modalEventDate">
                     <i class="far fa-calendar-alt"></i> 
                     <span id="modalDateText"></span> | 
                     <i class="fas fa-map-marker-alt ms-2"></i> 
                     <span id="modalLocationText"></span>
                 </div>
-                <p class="event-description" id="modalEventDescription"></p>
+                <p class="event-description mb-4" id="modalEventDescription"></p>
                 
-                <div class="d-flex justify-content-between mt-4">
+                <div class="d-flex justify-content-between align-items-center mt-4">
                     <a href="#" class="btn-event" id="modalRegisterBtn">Register Now <i class="fas fa-user-plus"></i></a>
                     <span class="event-status" id="modalEventStatus"></span>
                 </div>
             </div>
         </div>
     </div>
-     <!-- Footer Section -->
+    
+    <!-- Footer Section -->
     <footer class="footer text-center py-3 bg-light">
         <div class="container">
             <small>&copy; 2025 Members - eecclub.</small>
@@ -483,7 +462,7 @@
         const events = [
             {
                 id: 1,
-                title: "Inauguration ",
+                title: "Inauguration",
                 date: parseEventDate("1st week of August 2025"),
                 description: "Kickoff event with expert lecture on energy conservation and sustainable practices.",
                 location: "Main Auditorium",
@@ -499,7 +478,7 @@
             },
             {
                 id: 3,
-                title: "Eco Graphica ",
+                title: "Eco Graphica",
                 date: parseEventDate("4th week of August 2025"),
                 description: "Creative poster competition showcasing visions for a sustainable future.",
                 location: "Art Department",
@@ -507,7 +486,7 @@
             },
             {
                 id: 4,
-                title: "Field Visit ",
+                title: "Field Visit",
                 date: parseEventDate("2nd week of September 2025"),
                 description: "Hands-on learning experience at local sustainability projects.",
                 location: "Various Locations",
@@ -515,7 +494,7 @@
             },
             {
                 id: 5,
-                title: "Technical Symposium ",
+                title: "Technical Symposium",
                 date: parseEventDate("4th week of September 2025"),
                 description: "Technical presentations and discussions on sustainable energy solutions.",
                 location: "Engineering Block",
@@ -523,7 +502,7 @@
             },
             {
                 id: 6,
-                title: "Hackathon ",
+                title: "Hackathon",
                 date: parseEventDate("1st week of October 2025"),
                 description: "24-hour coding challenge to develop solutions for environmental problems.",
                 location: "Computer Center",
@@ -531,7 +510,7 @@
             },
             {
                 id: 7,
-                title: "Guest Lecture & Workshop on Water Quality Testing ",
+                title: "Guest Lecture & Workshop on Water Quality Testing",
                 date: parseEventDate("2nd week of October 2025"),
                 description: "Interactive session on water conservation and quality testing techniques.",
                 location: "Chemistry Lab",
@@ -539,7 +518,7 @@
             },
             {
                 id: 8,
-                title: "Eco Quiz Competition ",
+                title: "Eco Quiz Competition",
                 date: parseEventDate("4th week of November 2025"),
                 description: "Test your knowledge about renewable energy and climate change in this exciting quiz.",
                 location: "Quiz Hall",
@@ -547,7 +526,7 @@
             },
             {
                 id: 9,
-                title: "Eco Photo Fusion ",
+                title: "Eco Photo Fusion",
                 date: parseEventDate("1st week of December 2025"),
                 description: "Capture the essence of energy transformation and its environmental effects.",
                 location: "Photography Club",
@@ -563,7 +542,7 @@
             },
             {
                 id: 11,
-                title: "GreenSeape ",
+                title: "GreenSeape",
                 date: parseEventDate("2nd week of February 2026"),
                 description: "Hands-on sustainability efforts through campus beautification.",
                 location: "College Campus",
@@ -571,7 +550,7 @@
             },
             {
                 id: 12,
-                title: "Next Gen Earth ",
+                title: "Next Gen Earth",
                 date: parseEventDate("2nd week of March 2026"),
                 description: "Youth innovation showcase for a greener tomorrow.",
                 location: "Online Platform",
@@ -579,7 +558,7 @@
             },
             {
                 id: 13,
-                title: "Online Eco Event ",
+                title: "Online Eco Event",
                 date: parseEventDate("4th week of March 2026"),
                 description: "Virtual discussions about the future of our planet.",
                 location: "Online Event",
@@ -595,13 +574,14 @@
             },
             {
                 id: 15,
-                title: "Valedictory Function & Guest Lecture ",
+                title: "Valedictory Function & Guest Lecture",
                 date: parseEventDate("1st week of May 2026"),
                 description: "Closing ceremony with keynote on future conservation efforts.",
                 location: "Main Auditorium",
                 status: getEventStatus(parseEventDate("1st week of May 2026"))
             }
         ];
+
         // DOM Elements
         const eventsContainer = document.getElementById('eventsContainer');
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -620,14 +600,14 @@
             // Show modal for ongoing event (essay) if one exists
             const ongoingEvent = getOngoingEvent();
             if (ongoingEvent) {
-            setTimeout(() => {
-                showEventModal(ongoingEvent);
-            }, 1000);
+                setTimeout(() => {
+                    showEventModal(ongoingEvent);
+                }, 1000);
             }
 
             // Add staggered animation delays to event cards
             document.querySelectorAll('.event-card').forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animationDelay = `${index * 0.1}s`;
             });
         });
 
@@ -636,60 +616,60 @@
             eventsContainer.innerHTML = '';
 
             eventsToRender.forEach((event, index) => {
-            const eventDate = new Date(event.date);
-            const formattedDate = eventDate.toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
+                const eventDate = new Date(event.date);
+                const formattedDate = eventDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
 
-            const statusClass = getStatusClass(event.status);
-            const statusText = getStatusText(event.status);
+                const statusClass = getStatusClass(event.status);
+                const statusText = getStatusText(event.status);
 
-            // Only show register button for ongoing event (essay)
-            let registerBtnHtml = '';
-            if (event.status === 'ongoing') {
-                registerBtnHtml = `<a href="https://your-form-or-website-link.com" target="_blank" class="btn-event register-btn">Register for Essay <i class="fas fa-user-plus"></i></a>`;
-            }
+                // Only show register button for ongoing event (essay)
+                let registerBtnHtml = '';
+                if (event.status === 'ongoing') {
+                    registerBtnHtml = `<a href="https://your-form-or-website-link.com" target="_blank" class="btn-event register-btn">Register for Essay <i class="fas fa-user-plus"></i></a>`;
+                }
 
-            const eventCard = document.createElement('div');
-            eventCard.className = 'col-md-6 col-lg-3';
-            eventCard.innerHTML = `
-                <div class="event-card" data-id="${event.id}" style="animation-delay: ${index * 0.1}s">
-                <div class="event-body">
-                    <div class="event-date">
-                    <i class="far fa-calendar-alt"></i> ${formattedDate}
+                const eventCard = document.createElement('div');
+                eventCard.className = 'col-12 col-sm-6 col-lg-4 col-xl-3';
+                eventCard.innerHTML = `
+                    <div class="event-card" data-id="${event.id}" style="animation-delay: ${index * 0.1}s">
+                        <div class="event-body">
+                            <div class="event-date">
+                                <i class="far fa-calendar-alt"></i> ${formattedDate}
+                            </div>
+                            <h5 class="event-title">${event.title}</h5>
+                            <p class="event-description">${event.description}</p>
+                            <span class="event-status ${statusClass}">${statusText}</span>
+                            ${registerBtnHtml}
+                        </div>
                     </div>
-                    <h5 class="event-title">${event.title}</h5>
-                    <p class="event-description">${event.description}</p>
-                    <span class="event-status ${statusClass}">${statusText}</span>
-                    ${registerBtnHtml}
-                </div>
-                </div>
-            `;
+                `;
 
-            eventsContainer.appendChild(eventCard);
+                eventsContainer.appendChild(eventCard);
             });
 
             // Add event listeners to the register buttons
             document.querySelectorAll('.register-btn').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // For ongoing event, let link open the form/external site
-            });
+                btn.addEventListener('click', function(e) {
+                    // For ongoing event, let link open the form/external site
+                });
             });
 
             // Add event listeners to the cards for modal
             document.querySelectorAll('.event-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                if (!e.target.closest('.register-btn')) {
-                const eventId = parseInt(this.dataset.id);
-                const event = events.find(ev => ev.id === eventId);
-                if (event.status === 'ongoing') {
-                    showEventModal(event);
-                }
-                // Only ongoing event shows modal, others do nothing
-                }
-            });
+                card.addEventListener('click', function(e) {
+                    if (!e.target.closest('.register-btn')) {
+                        const eventId = parseInt(this.dataset.id);
+                        const event = events.find(ev => ev.id === eventId);
+                        if (event.status === 'ongoing') {
+                            showEventModal(event);
+                        }
+                        // Only ongoing event shows modal, others do nothing
+                    }
+                });
             });
         }
 
@@ -731,7 +711,8 @@
             document.getElementById('modalEventStatus').className = `event-status ${statusClass}`;
 
             // Set up modal register button
-            document.getElementById('modalRegisterBtn').onclick = function(e) {
+            const registerBtn = document.getElementById('modalRegisterBtn');
+            registerBtn.onclick = function(e) {
                 e.preventDefault();
                 window.open(`https://docs.google.com/forms/d/e/1FAIpQLScekK8ioXHcumOO9q-6UAVmcRVBwK3yaQRjZvdj5-YTqAqttw/viewform?event=${encodeURIComponent(event.title)}`, '_blank');
             };
