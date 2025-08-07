@@ -326,52 +326,90 @@
         }
 
         /* Responsive styles */
+        @media (max-width: 1200px) {
+            .modal-content {
+            width: 80%;
+            max-width: 95vw;
+            }
+            .event-card {
+            min-width: 260px;
+            }
+        }
+
         @media (max-width: 992px) {
             .hero {
-                padding: 80px 0;
+            padding: 80px 0;
             }
-            
             .event-card {
-                margin-bottom: 25px;
+            margin-bottom: 25px;
+            }
+            .modal-content {
+            width: 90%;
+            max-width: 98vw;
             }
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 60px 0;
-                margin-bottom: 30px;
+            padding: 60px 0;
+            margin-bottom: 30px;
             }
-            
             .section-title h2 {
-                font-size: 1.8rem;
+            font-size: 1.8rem;
             }
-            
             .filter-btn {
-                padding: 5px 12px;
-                font-size: 0.8rem;
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            }
+            .event-card {
+            min-width: 220px;
+            }
+            .modal-content {
+            width: 98%;
+            max-width: 99vw;
             }
         }
 
         @media (max-width: 576px) {
             .hero {
-                padding: 50px 0;
+            padding: 50px 0;
             }
-            
             .section-title h2 {
-                font-size: 1.5rem;
+            font-size: 1.5rem;
             }
-            
             .featured-event-body {
-                padding: 20px;
+            padding: 15px;
             }
-            
             .filter-buttons {
-                gap: 5px;
+            gap: 5px;
             }
-            
             .filter-btn {
-                padding: 4px 10px;
-                font-size: 0.75rem;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            }
+            .event-card {
+            min-width: 100%;
+            margin-bottom: 15px;
+            }
+            .modal-content {
+            width: 100vw;
+            max-width: 100vw;
+            border-radius: 0;
+            }
+        }
+
+        /* Make event grid responsive */
+        @media (max-width: 991.98px) {
+            #eventsContainer .col-lg-3 {
+            flex: 0 0 50%;
+            max-width: 50%;
+            }
+        }
+        @media (max-width: 575.98px) {
+            #eventsContainer .col-lg-3,
+            #eventsContainer .col-md-6 {
+            flex: 0 0 100%;
+            max-width: 100%;
             }
         }
     </style>
@@ -423,7 +461,7 @@
                 </div>
                 <p class="event-description" id="modalEventDescription"></p>
                 
-                <div class="d-flex justify-content-between mt-4">
+                <div class="d-flex justify-content-between mt-4 flex-column flex-sm-row gap-3">
                     <a href="#" class="btn-event" id="modalRegisterBtn">Register Now <i class="fas fa-user-plus"></i></a>
                     <span class="event-status" id="modalEventStatus"></span>
                 </div>
