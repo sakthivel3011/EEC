@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Energy & Environment Conservation Club - Gallery</title>
-    
+    <title>Gallery - eecclub</title>
+    <link rel="icon" type="image/png" href="assets/images/logo/club.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -56,78 +56,17 @@
             overflow: hidden;
         }
         .grid-item .overlay {
-            background-color: rgba(0, 0, 0, 0.7);
+            
             opacity: 0;
             transition: opacity 0.3s ease;
         }
         .grid-item:hover .overlay {
             opacity: 1;
         }
-        .eec-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-light);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            opacity: 1;
-            transition: opacity 0.5s ease;
-        }
-        .eec-loader-inner {
-            position: relative;
-            width: 100px;
-            height: 100px;
-        }
-        .eec-loader-circle {
-            position: absolute;
-            border: 4px solid var(--primary-color);
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-        }
-        .eec-loader-circle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10px;
-            left: 10px;
-            animation-delay: -0.24s;
-        }
-        .eec-loader-circle:nth-child(2) {
-            width: 60px;
-            height: 60px;
-            top: 20px;
-            left: 20px;
-            animation-delay: -0.12s;
-        }
-        .eec-loader-circle:nth-child(3) {
-            width: 40px;
-            height: 40px;
-            top: 30px;
-            left: 30px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.1); }
-        }
+        
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
-
-<div class="eec-loader">
-    <div class="eec-loader-inner">
-        <div class="eec-loader-circle"></div>
-        <div class="eec-loader-circle"></div>
-        <div class="eec-loader-circle"></div>
-    </div>
-</div>
 
 <section id="gallery" class="py-16 md:py-24">
     <div class="container mx-auto px-4">
@@ -150,8 +89,8 @@
         </div>
 
         <div class="flex justify-center mt-12" data-aos="fade-up" data-aos-duration="800">
-            <a href="#home" class="px-6 py-3 rounded-full text-sm font-semibold transition-colors duration-300 bg-green-500 text-white shadow-md hover:bg-green-600 animate-bounce"
-               onclick="event.preventDefault(); document.getElementById('home').scrollIntoView({ behavior: 'smooth' });">
+            <a href="#" class="px-6 py-3 rounded-full text-sm font-semibold transition-colors duration-300 bg-green-500 text-white shadow-md hover:bg-green-600 animate-bounce"
+               onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });">
                 Back to Top
             </a>
         </div>
@@ -166,8 +105,21 @@
             { title: "Tree Planting Day", description: "Annual campus tree planting event", year: 2024, imgUrl: "assets/images/photo/2024/1.jpg" },
             { title: "Recycling Project", description: "Students working on waste management", year: 2024, imgUrl: "assets/images/photo/2024/2.jpg" },
             { title: "Environmental Seminar", description: "Guest speaker discussing sustainability", year: 2024, imgUrl: "assets/images/photo/2024/3.jpg" },
-            { title: "Beach Cleanup", description: "Community service activity", year: 2024, imgUrl: "assets/images/photo/2024/6.jpg" },
             { title: "Eco Workshop", description: "Students learning sustainable practices", year: 2024, imgUrl: "assets/images/photo/2024/4.jpg" },
+            { title: "Beach Cleanup", description: "Community service activity", year: 2024, imgUrl: "assets/images/photo/2024/6.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/1.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/3.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/4.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/5.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/7.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/8.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/9.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/10.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/11.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/16.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/20.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/21.jpg" },
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/25.jpg" },
             { title: "Campus Nature", description: "Beautiful greenery around our college",  imgUrl: "assets/images/photo/others/1.jpg" },
             { title: "Club Members", description: "Our dedicated team of volunteers",  imgUrl: "assets/images/photo/others/2.jpg" },
             { title: "Local Wildlife", description: "Biodiversity around our campus",  imgUrl: "assets/images/photo/others/3.jpg" },
@@ -179,21 +131,7 @@
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/9.jpg" },
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/10.jpg" },
             { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/11.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/12.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/21.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/20.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/3.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/4.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/5.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/16.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/7.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/8.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/9.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/10.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/11.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/23.jpg" },
-            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  year: 2025, imgUrl: "assets/images/photo/2025/25.jpg" }
-            // Add more 2022 images here as needed
+            { title: "Water Conservation", description: "Demonstrating rainwater harvesting",  imgUrl: "assets/images/photo/others/12.jpg" }
         ];
 
         const galleryGrid = document.getElementById('gallery-grid');
