@@ -562,7 +562,7 @@
                 date: new Date(2025, 7, 15), // August is month 7 (0-indexed)
                 description: "Essay writing competition focusing on India's environmental leadership.",
                 location: "Seminar Hall",
-                status: 'ongoing' // This will be ongoing based on the current date set above
+                status: 'completed' // This event is now completed
             },
             {
                 id: 3,
@@ -570,7 +570,7 @@
                 date: parseEventDate("4th week of August 2025"),
                 description: "Creative poster competition showcasing visions for a sustainable future.",
                 location: "Art Department",
-                status: getEventStatus(parseEventDate("4th week of August 2025"))
+                status: 'ongoing' // This event is now ongoing
             },
             {
                 id: 4,
@@ -716,7 +716,7 @@
             // Only show register button for ongoing event (essay)
             let registerBtnHtml = '';
             if (event.status === 'ongoing') {
-                registerBtnHtml = `<a href="https://docs.google.com/forms/d/e/1FAIpQLScekK8ioXHcumOO9q-6UAVmcRVBwK3yaQRjZvdj5-YTqAqttw/viewform?event=Patriotic%20Pengister-btn" target="_blank" class="btn-event register-btn">Register for Essay <i class="fas fa-user-plus"></i></a>`;
+                registerBtnHtml = `<a href="events.html?id=${event.id}" target="_blank" class="btn-event register-btn">Register <i class="fas fa-user-plus"></i></a>`;
             }
 
             const eventCard = document.createElement('div');
@@ -800,7 +800,7 @@
             // Set up modal register button
             document.getElementById('modalRegisterBtn').onclick = function(e) {
                 e.preventDefault();
-                window.open(`https://docs.google.com/forms/d/e/1FAIpQLScekK8ioXHcumOO9q-6UAVmcRVBwK3yaQRjZvdj5-YTqAqttw/viewform?event=${encodeURIComponent(event.title)}`, '_blank');
+                window.open(`events.html?id=${event.id}`, '_blank');
             };
 
             featuredModal.classList.add('active');

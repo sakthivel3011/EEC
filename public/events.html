@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEC - Sustainable Future Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #2E7D32;
+            --dark-green: #1B5E20;
+            --light-green: #81C784;
+            --lighter-green: #E8F5E9;
+            --accent-orange: #FF8F00;
+            --accent-blue: #0288D1;
+            --text-dark: #263238;
+            --text-medium: #546E7A;
+            --text-light: #B0BEC5;
+            --white: #FFFFFF;
+            --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 15px 30px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F5F7FA;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(129, 199, 132, 0.1) 0%, rgba(129, 199, 132, 0) 20%),
+                radial-gradient(circle at 90% 80%, rgba(2, 136, 209, 0.1) 0%, rgba(2, 136, 209, 0) 20%);
+            background-attachment: fixed;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            margin-bottom: 40px;
+            transform: translateY(0);
+            transition: var(--transition);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            animation: shine 8s infinite linear;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(30deg) translate(-30%, -30%); }
+            100% { transform: rotate(30deg) translate(30%, 30%); }
+        }
+        
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .logo i {
+            color: var(--primary-green);
+            font-size: 36px;
+        }
+        
+        .logo:hover {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .card-body {
+            padding: 40px;
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-medium);
+            font-size: 0.95rem;
+        }
+        
+        .input-wrapper {
+            position: relative;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: var(--white);
+            color: var(--text-dark);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus {
+            border-color: var(--primary-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+        }
+        
+        .input-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            pointer-events: none;
+        }
+        
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .radio-card {
+            flex: 1 1 200px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .radio-card:hover {
+            border-color: var(--primary-green);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .radio-card::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(46, 125, 50, 0));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .radio-card:hover::after {
+            opacity: 1;
+        }
+        
+        .radio-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .radio-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--lighter-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-green);
+            flex-shrink: 0;
+        }
+        
+        .radio-text h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+        }
+        
+        .radio-text p {
+            font-size: 0.85rem;
+            color: var(--text-medium);
+        }
+        
+        .radio-card input:checked ~ .radio-content .radio-icon {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+        
+        .radio-card input:checked ~ .radio-content h4 {
+            color: var(--primary-green);
+        }
+        
+        .radio-card input:checked ~ .radio-content p {
+            color: var(--text-dark);
+        }
+        
+        .team-section {
+            background: var(--lighter-green);
+            border-radius: 12px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .team-member {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        
+        .team-member:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .team-member:last-child {
+            margin-bottom: 0;
+        }
+        
+        .member-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+        
+        .member-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--lighter-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            color: var(--primary-green);
+        }
+        
+        .member-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            color: var(--white);
+            border: none;
+            padding: 16px 32px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: block;
+            width: 100%;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: var(--shadow-sm);
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+        
+        .btn-submit::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            animation: shine 8s infinite linear;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .btn-submit:hover::after {
+            opacity: 1;
+        }
+        
+        .error {
+            color: #E53935;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+            animation: shake 0.4s ease;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+        
+        input:invalid, select:invalid {
+            border-color: #E53935;
+        }
+        
+        .success-container {
+            display: none;
+            text-align: center;
+            padding: 60px 40px;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-size: 40px;
+            box-shadow: var(--shadow-md);
+            animation: bounce 1s ease infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+        
+        .success-title {
+            font-size: 2rem;
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .success-message {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .eco-tips {
+            margin-top: 40px;
+            padding: 20px;
+            background: var(--lighter-green);
+            border-radius: 12px;
+            text-align: left;
+        }
+        
+        .eco-tips h3 {
+            color: var(--primary-green);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .eco-tips h3 i {
+            margin-right: 10px;
+        }
+        
+        .eco-tips ul {
+            list-style-type: none;
+        }
+        
+        .eco-tips li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .eco-tips li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-green);
+            font-weight: bold;
+        }
+        
+        .floating-leaves {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .leaf {
+            position: absolute;
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.7;
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+            
+            .card-header {
+                padding: 25px 15px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card-body {
+                padding: 25px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+            }
+            
+            .radio-card {
+                flex: 1 1 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-leaves" id="leavesContainer"></div>
+    
+    <div class="container">
+        <div class="card" id="registrationCard">
+            <div class="card-header">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                </div>
+                <h1>Join Our Sustainable Mission</h1>
+                <p class="subtitle">Register your team for the Energy & Environment Conservation Club events</p>
+            </div>
+            
+            <div class="card-body">
+                <form id="registrationForm">
+                    <!-- Step 1: Team Information -->
+                    <div class="form-step" id="step1" style="display: block;">
+                        <div class="form-section" style="animation-delay: 0.1s">
+                            <div class="section-title">
+                                <i class="fas fa-users"></i>
+                                <span>Team Information</span>
+                            </div>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="teamName">Team Name</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="teamName" name="teamName" required placeholder="Eco Warriors">
+                                        <div class="input-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                    <div class="error" id="teamNameError">Please enter a team name</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-section" style="animation-delay: 0.2s">
+                            <div class="section-title">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Select Event</span>
+                            </div>
+                            <div class="radio-group">
+                                <label class="radio-card">
+                                    <input type="radio" id="videoEditing" name="event" value="Video Editing" required>
+                                    <div class="radio-content">
+                                        <div class="radio-icon">
+                                            <i class="fas fa-video"></i>
+                                        </div>
+                                        <div class="radio-text">
+                                            <h4>Video Editing</h4>
+                                            <p>Create impactful environmental awareness videos</p>
+                                        </div>
+                                    </div>
+                                </label>
+                                
+                                <label class="radio-card">
+                                    <input type="radio" id="logoDesigning" name="event" value="Logo Designing">
+                                    <div class="radio-content">
+                                        <div class="radio-icon">
+                                            <i class="fas fa-pen-fancy"></i>
+                                        </div>
+                                        <div class="radio-text">
+                                            <h4>Logo Designing</h4>
+                                            <p>Design logos for sustainability initiatives</p>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            <div class="error" id="eventError">Please select an event</div>
+                        </div>
+                        
+                        <button type="button" class="btn-next" onclick="validateStep1()">
+                            Next <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Step 2: Member 1 Details -->
+                    <div class="form-step" id="step2" style="display: none;">
+                        <div class="team-section" style="animation-delay: 0.3s">
+                            <div class="form-section">
+                                <div class="section-title">
+                                    <i class="fas fa-user-friends"></i>
+                                    <span>Team Member 1 (Leader)</span>
+                                </div>
+                                
+                                <div class="team-member">
+                                    <div class="member-header">
+                                        <div class="member-icon">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <h3 class="member-title">Member 1 Details</h3>
+                                    </div>
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="member1Name">Full Name</label>
+                                            <div class="input-wrapper">
+                                                <input type="text" id="member1Name" name="member1Name" required placeholder="John Doe">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-signature"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member1NameError">Please enter member name</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member1RollNo">Roll Number</label>
+                                            <div class="input-wrapper">
+                                                <input type="text" id="member1RollNo" name="member1RollNo" pattern="[0-9]{2}[A-Za-z]{2,3}[0-9]{3}" required placeholder="23ITR033">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-id-card"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member1RollNoError">Please enter a valid roll number (e.g., 23ITR033)</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member1Department">Department</label>
+                                            <div class="input-wrapper">
+                                                <select id="member1Department" name="member1Department" required>
+                                                    <option value="">Select Department</option>
+                                                    <option value="AIDS">AIDS</option>
+                                                    <option value="AIML">AIML</option>
+                                                    <option value="CIVIL">CIVIL</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="ECE">ECE</option>
+                                                    <option value="EEE">EEE</option>
+                                                    <option value="EIE">EIE</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="MECH">MECH</option>
+                                                    <option value="MTS">MTS</option>
+                                                    <option value="OTHER">OTHER</option>
+                                                </select>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-building"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member1DepartmentError">Please select a department</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member1Year">Year</label>
+                                            <div class="input-wrapper">
+                                                <select id="member1Year" name="member1Year" required>
+                                                    <option value="">Select Year</option>
+                                                    <option value="1">1st Year</option>
+                                                    <option value="2">2nd Year</option>
+                                                    <option value="3">3rd Year</option>
+                                                    <option value="4">4th Year</option>
+                                                </select>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member1YearError">Please select your year</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member1Email">Email ID</label>
+                                            <div class="input-wrapper">
+                                                <input type="email" id="member1Email" name="member1Email" required placeholder="john@example.com">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member1EmailError">Please enter a valid email address</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-buttons">
+                            <button type="button" class="btn-prev" onclick="prevStep(2, 1)">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Previous
+                            </button>
+                            <button type="button" class="btn-next" onclick="validateStep2()">
+                                Next <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Member 2 Details -->
+                    <div class="form-step" id="step3" style="display: none;">
+                        <div class="team-section" style="animation-delay: 0.3s">
+                            <div class="form-section">
+                                <div class="section-title">
+                                    <i class="fas fa-user-friends"></i>
+                                    <span>Team Member 2</span>
+                                </div>
+                                
+                                <div class="team-member">
+                                    <div class="member-header">
+                                        <div class="member-icon">
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                        <h3 class="member-title">Member 2 Details</h3>
+                                    </div>
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="member2Name">Full Name</label>
+                                            <div class="input-wrapper">
+                                                <input type="text" id="member2Name" name="member2Name" required placeholder="Jane Smith">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-signature"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member2NameError">Please enter member name</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member2RollNo">Roll Number</label>
+                                            <div class="input-wrapper">
+                                                <input type="text" id="member2RollNo" name="member2RollNo" pattern="[0-9]{2}[A-Za-z]{2,3}[0-9]{3}" required placeholder="23ITR034">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-id-card"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member2RollNoError">Please enter a valid roll number (e.g., 23ITR033)</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member2Department">Department</label>
+                                            <div class="input-wrapper">
+                                                <select id="member2Department" name="member2Department" required>
+                                                    <option value="">Select Department</option>
+                                                    <option value="AIDS">AIDS</option>
+                                                    <option value="AIML">AIML</option>
+                                                    <option value="CIVIL">CIVIL</option>
+                                                    <option value="CSE">CSE</option>
+                                                    <option value="ECE">ECE</option>
+                                                    <option value="EEE">EEE</option>
+                                                    <option value="EIE">EIE</option>
+                                                    <option value="FT">FT</option>
+                                                    <option value="IT">IT</option>
+                                                    <option value="MECH">MECH</option>
+                                                    <option value="MTS">MTS</option>
+                                                    <option value="OTHER">OTHER</option>
+                                                </select>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-building"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member2DepartmentError">Please select a department</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member2Year">Year</label>
+                                            <div class="input-wrapper">
+                                                <select id="member2Year" name="member2Year" required>
+                                                    <option value="">Select Year</option>
+                                                    <option value="1">1st Year</option>
+                                                    <option value="2">2nd Year</option>
+                                                    <option value="3">3rd Year</option>
+                                                    <option value="4">4th Year</option>
+                                                </select>
+                                                <div class="input-icon">
+                                                    <i class="fas fa-calendar-alt"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member2YearError">Please select your year</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="member2Email">Email ID</label>
+                                            <div class="input-wrapper">
+                                                <input type="email" id="member2Email" name="member2Email" required placeholder="jane@example.com">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-envelope"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member2EmailError">Please enter a valid email address</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="step-buttons">
+                            <button type="button" class="btn-prev" onclick="prevStep(3, 2)">
+                                <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Previous
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Submit Registration
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="success-container" id="successContainer">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="success-title">Thank You for Registering!</h2>
+            <p class="success-message">
+                Your team has been successfully registered for the Energy & Environment Conservation Club event.
+                We've sent a confirmation to your email addresses with further details.
+            </p>
+            <p class="success-message">
+                Together, we can make a difference for a sustainable future!
+            </p>
+            
+            <div class="eco-tips">
+                <h3><i class="fas fa-lightbulb"></i> While You Wait: Eco Tips</h3>
+                <ul>
+                    <li>Turn off lights when leaving a room to save energy</li>
+                    <li>Use reusable water bottles instead of plastic ones</li>
+                    <li>Recycle paper, plastic, and electronics properly</li>
+                    <li>Consider walking or cycling for short distances</li>
+                    <li>Reduce water waste by fixing leaks promptly</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+// Replace all JavaScript in your file with this updated version
+
+// Create floating leaves
+function createLeaves() {
+    const container = document.getElementById('leavesContainer');
+    const leafTypes = ['🍀', '🌿', '🍃', '🍂', '🍁'];
+    
+    for (let i = 0; i < 15; i++) {
+        const leaf = document.createElement('div');
+        leaf.className = 'leaf';
+        leaf.textContent = leafTypes[Math.floor(Math.random() * leafTypes.length)];
+        
+        // Random position and size
+        const size = Math.random() * 20 + 10;
+        leaf.style.fontSize = `${size}px`;
+        leaf.style.left = `${Math.random() * 100}vw`;
+        leaf.style.bottom = `-${size}px`;
+        
+        // Animation duration and delay
+        const duration = Math.random() * 20 + 10;
+        const delay = Math.random() * 10;
+        leaf.style.animationDuration = `${duration}s`;
+        leaf.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(leaf);
+    }
+}
+
+// Navigation between steps
+function nextStep(currentStep, nextStep) {
+    document.getElementById(`step${currentStep}`).style.display = 'none';
+    document.getElementById(`step${nextStep}`).style.display = 'block';
+    window.scrollTo(0, 0);
+}
+
+function prevStep(currentStep, prevStep) {
+    document.getElementById(`step${currentStep}`).style.display = 'none';
+    document.getElementById(`step${prevStep}`).style.display = 'block';
+    window.scrollTo(0, 0);
+}
+
+// Validation functions for each step
+function validateStep1() {
+    let isValid = true;
+    
+    // Team Name validation
+    const teamName = document.getElementById('teamName').value.trim();
+    if (teamName === '') {
+        document.getElementById('teamNameError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('teamNameError').style.display = 'none';
+    }
+    
+    // Event validation
+    const eventSelected = document.querySelector('input[name="event"]:checked');
+    if (!eventSelected) {
+        document.getElementById('eventError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('eventError').style.display = 'none';
+    }
+    
+    if (isValid) {
+        nextStep(1, 2);
+    }
+}
+
+function validateStep2() {
+    let isValid = true;
+    
+    // Member 1 validation
+    const member1Name = document.getElementById('member1Name').value.trim();
+    if (member1Name === '') {
+        document.getElementById('member1NameError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member1NameError').style.display = 'none';
+    }
+    
+    const member1RollNo = document.getElementById('member1RollNo').value.trim();
+    const rollNoPattern = /^[0-9]{2}[A-Za-z]{2,3}[0-9]{3}$/;
+    if (!rollNoPattern.test(member1RollNo)) {
+        document.getElementById('member1RollNoError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member1RollNoError').style.display = 'none';
+    }
+    
+    const member1Department = document.getElementById('member1Department').value;
+    if (member1Department === '') {
+        document.getElementById('member1DepartmentError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member1DepartmentError').style.display = 'none';
+    }
+    
+    const member1Year = document.getElementById('member1Year').value;
+    if (member1Year === '') {
+        document.getElementById('member1YearError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member1YearError').style.display = 'none';
+    }
+    
+    const member1Email = document.getElementById('member1Email').value.trim();
+    if (!validateEmail(member1Email)) {
+        document.getElementById('member1EmailError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member1EmailError').style.display = 'none';
+    }
+    
+    if (isValid) {
+        nextStep(2, 3);
+    }
+}
+
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+// Form submission
+document.addEventListener('DOMContentLoaded', function() {
+    createLeaves();
+    
+    document.getElementById('registrationForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (validateStep3()) {
+            submitForm();
+        }
+    });
+});
+
+function validateStep3() {
+    let isValid = true;
+    
+    // Member 2 validation
+    const member2Name = document.getElementById('member2Name').value.trim();
+    if (member2Name === '') {
+        document.getElementById('member2NameError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member2NameError').style.display = 'none';
+    }
+    
+    const member2RollNo = document.getElementById('member2RollNo').value.trim();
+    const rollNoPattern = /^[0-9]{2}[A-Za-z]{2,3}[0-9]{3}$/;
+    if (!rollNoPattern.test(member2RollNo)) {
+        document.getElementById('member2RollNoError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member2RollNoError').style.display = 'none';
+    }
+    
+    const member2Department = document.getElementById('member2Department').value;
+    if (member2Department === '') {
+        document.getElementById('member2DepartmentError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member2DepartmentError').style.display = 'none';
+    }
+    
+    const member2Year = document.getElementById('member2Year').value;
+    if (member2Year === '') {
+        document.getElementById('member2YearError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member2YearError').style.display = 'none';
+    }
+    
+    const member2Email = document.getElementById('member2Email').value.trim();
+    if (!validateEmail(member2Email)) {
+        document.getElementById('member2EmailError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member2EmailError').style.display = 'none';
+    }
+    
+    return isValid;
+}
+
+function submitForm() {
+    // Collect form data
+    const formData = {
+        teamName: document.getElementById('teamName').value.trim(),
+        event: document.querySelector('input[name="event"]:checked').value,
+        member1: {
+            name: document.getElementById('member1Name').value.trim(),
+            rollNo: document.getElementById('member1RollNo').value.trim(),
+            department: document.getElementById('member1Department').value,
+            year: document.getElementById('member1Year').value,
+            email: document.getElementById('member1Email').value.trim()
+        },
+        member2: {
+            name: document.getElementById('member2Name').value.trim(),
+            rollNo: document.getElementById('member2RollNo').value.trim(),
+            department: document.getElementById('member2Department').value,
+            year: document.getElementById('member2Year').value,
+            email: document.getElementById('member2Email').value.trim()
+        }
+    };
+
+    // Show loading state
+    const btn = document.querySelector('.btn-submit');
+    btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Processing...';
+    btn.disabled = true;
+
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbySNzUQYVrL9NoJNQ2fSXjNB1QCOJCZcbOBIy0yGUxPVQxUe2ZVdMVKjNb0yP_0C8S2fw/exec';
+
+    // Modified fetch request
+    fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        redirect: 'follow',
+        body: JSON.stringify(formData),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(() => {
+        // With no-cors, we can't read the response, so we'll assume success
+        showSuccessMessage();
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('There was an error submitting the form. Please try again later.');
+    })
+    .finally(() => {
+        btn.innerHTML = '<i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Submit Registration';
+        btn.disabled = false;
+    });
+}
+
+function showSuccessMessage() {
+    document.getElementById('registrationCard').style.display = 'none';
+    document.getElementById('successContainer').style.display = 'block';
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
