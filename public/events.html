@@ -1167,13 +1167,13 @@ function submitForm() {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Processing...';
     btn.disabled = true;
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbz9pYznFgSNvj47SI0zhw8J1r_JVwHE1y7ZlJYQhezpBPagol-iFKuyrxq3ISa2dGWl-A/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbwT5nGK26CfRrSuCNpt4AwDnIR3TdBtCEbfBFQXMjCtuNuhdq8VwHQ7axzg3wNBi6WhFA/exec';
 
     // Modified fetch request
     fetch(scriptUrl, {
         method: 'POST',
         mode: 'no-cors',
-        cache: 'no-cache',
+        cache: 'no-cache',  
         redirect: 'follow',
         body: JSON.stringify(formData),
         headers: {
