@@ -562,6 +562,70 @@
                 flex: 1 1 auto;
             }
         }
+
+
+        .btn-next, .btn-prev {
+    background: var(--primary-green);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-sm);
+    margin-top: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-next:hover, .btn-prev:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-next:active, .btn-prev:active {
+    transform: translateY(0);
+}
+
+.btn-prev {
+    background: var(--text-medium);
+    margin-right: 15px;
+}
+
+.btn-prev:hover {
+    background: var(--text-dark);
+}
+
+.step-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.whatsapp-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--accent-blue);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.whatsapp-link i {
+    margin-right: 5px;
+    color: #25D366;
+}
+
+.whatsapp-link:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
@@ -600,6 +664,11 @@
                                     <div class="error" id="teamNameError">Please enter a team name</div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div>
+                           <h2>Join our group </h2>
+                           <p>https://chat.whatsapp.com/EP2JVdGAm6C2Z1LxK9wOz8?mode=ac_t</p>
                         </div>
                         
                         <div class="form-section" style="animation-delay: 0.2s">
