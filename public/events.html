@@ -753,6 +753,17 @@
                                             </div>
                                             <div class="error" id="member1RollNoError">Please enter a valid roll number (e.g., 23ITR033)</div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="member1Contact">Contact Number</label>
+                                            <div class="input-wrapper">
+                                                <input type="text" id="member1Contact" name="member1Contact" required pattern="[0-9]{10}" placeholder="9876543210">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-phone"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member1ContactError">Please enter a valid 10-digit contact number</div>
+                                        </div>
                                         
                                         <div class="form-group">
                                             <label for="member1Department">Department</label>
@@ -847,7 +858,7 @@
                                         <div class="form-group">
                                             <label for="member2Name">Full Name</label>
                                             <div class="input-wrapper">
-                                                <input type="text" id="member2Name" name="member2Name" required placeholder="Jane Smith">
+                                                <input type="text" id="member2Name" name="member2Name"  placeholder="Jane Smith">
                                                 <div class="input-icon">
                                                     <i class="fas fa-signature"></i>
                                                 </div>
@@ -858,18 +869,29 @@
                                         <div class="form-group">
                                             <label for="member2RollNo">Roll Number</label>
                                             <div class="input-wrapper">
-                                                <input type="text" id="member2RollNo" name="member2RollNo" pattern="[0-9]{2}[A-Za-z]{2,3}[0-9]{3}" required placeholder="23ITR034">
+                                                <input type="text" id="member2RollNo" name="member2RollNo" pattern="[0-9]{2}[A-Za-z]{2,3}[0-9]{3}"  placeholder="23ITR034">
                                                 <div class="input-icon">
                                                     <i class="fas fa-id-card"></i>
                                                 </div>
                                             </div>
                                             <div class="error" id="member2RollNoError">Please enter a valid roll number (e.g., 23ITR033)</div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="member2Contact">Contact Number (optional)</label>
+                                            <div class="input-wrapper">
+                                                <input type="text" id="member2Contact" name="member2Contact" pattern="[0-9]{10}" placeholder="9876543210">
+                                                <div class="input-icon">
+                                                    <i class="fas fa-phone"></i>
+                                                </div>
+                                            </div>
+                                            <div class="error" id="member2ContactError" style="display:none;">Please enter a valid 10-digit contact number</div>
+                                        </div>
                                         
                                         <div class="form-group">
                                             <label for="member2Department">Department</label>
                                             <div class="input-wrapper">
-                                                <select id="member2Department" name="member2Department" required>
+                                                <select id="member2Department" name="member2Department" >
                                                     <option value="">Select Department</option>
                                                     <option value="AIDS">AIDS</option>
                                                     <option value="AIML">AIML</option>
@@ -899,7 +921,7 @@
                                         <div class="form-group">
                                             <label for="member2Year">Year</label>
                                             <div class="input-wrapper">
-                                                <select id="member2Year" name="member2Year" required>
+                                                <select id="member2Year" name="member2Year" >
                                                     <option value="">Select Year</option>
                                                     <option value="1">1st Year</option>
                                                     <option value="2">2nd Year</option>
@@ -916,7 +938,7 @@
                                         <div class="form-group">
                                             <label for="member2Email">Email ID</label>
                                             <div class="input-wrapper">
-                                                <input type="email" id="member2Email" name="member2Email" required placeholder="jane@example.com">
+                                                <input type="email" id="member2Email" name="member2Email"  placeholder="jane@example.com">
                                                 <div class="input-icon">
                                                     <i class="fas fa-envelope"></i>
                                                 </div>
@@ -1059,6 +1081,16 @@ function validateStep2() {
     } else {
         document.getElementById('member1RollNoError').style.display = 'none';
     }
+
+    // Member 1 Contact validation
+    const member1Contact = document.getElementById('member1Contact').value.trim();
+    const contactPattern = /^[0-9]{10}$/;
+    if (!contactPattern.test(member1Contact)) {
+        document.getElementById('member1ContactError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member1ContactError').style.display = 'none';
+    }
     
     const member1Department = document.getElementById('member1Department').value;
     if (member1Department === '') {
@@ -1109,49 +1141,62 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function validateStep3() {
     let isValid = true;
-    
-    // Member 2 validation
+
+    // Member 2 Name (optional)
     const member2Name = document.getElementById('member2Name').value.trim();
-    if (member2Name === '') {
+    if (member2Name !== '' && member2Name.length < 2) {
         document.getElementById('member2NameError').style.display = 'block';
         isValid = false;
     } else {
         document.getElementById('member2NameError').style.display = 'none';
     }
-    
+
+    // Member 2 Roll No (optional)
     const member2RollNo = document.getElementById('member2RollNo').value.trim();
     const rollNoPattern = /^[0-9]{2}[A-Za-z]{2,3}[0-9]{3}$/;
-    if (!rollNoPattern.test(member2RollNo)) {
+    if (member2RollNo !== '' && !rollNoPattern.test(member2RollNo)) {
         document.getElementById('member2RollNoError').style.display = 'block';
         isValid = false;
     } else {
         document.getElementById('member2RollNoError').style.display = 'none';
     }
-    
+
+    // Member 2 Contact (optional)
+    const member2Contact = document.getElementById('member2Contact').value.trim();
+    if (member2Contact !== '' && !/^[0-9]{10}$/.test(member2Contact)) {
+        document.getElementById('member2ContactError').style.display = 'block';
+        isValid = false;
+    } else {
+        document.getElementById('member2ContactError').style.display = 'none';
+    }
+
+    // Member 2 Department (optional)
     const member2Department = document.getElementById('member2Department').value;
-    if (member2Department === '') {
+    if (member2Department !== '' && member2Department.length < 2) {
         document.getElementById('member2DepartmentError').style.display = 'block';
         isValid = false;
     } else {
         document.getElementById('member2DepartmentError').style.display = 'none';
     }
-    
+
+    // Member 2 Year (optional)
     const member2Year = document.getElementById('member2Year').value;
-    if (member2Year === '') {
+    if (member2Year !== '' && !['1','2','3','4','5'].includes(member2Year)) {
         document.getElementById('member2YearError').style.display = 'block';
         isValid = false;
     } else {
         document.getElementById('member2YearError').style.display = 'none';
     }
-    
+
+    // Member 2 Email (optional)
     const member2Email = document.getElementById('member2Email').value.trim();
-    if (!validateEmail(member2Email)) {
+    if (member2Email !== '' && !validateEmail(member2Email)) {
         document.getElementById('member2EmailError').style.display = 'block';
         isValid = false;
     } else {
         document.getElementById('member2EmailError').style.display = 'none';
     }
-    
+
     return isValid;
 }
 
@@ -1163,6 +1208,7 @@ function submitForm() {
         member1: {
             name: document.getElementById('member1Name').value.trim(),
             rollNo: document.getElementById('member1RollNo').value.trim(),
+            contact: document.getElementById('member1Contact').value.trim(),
             department: document.getElementById('member1Department').value,
             year: document.getElementById('member1Year').value,
             email: document.getElementById('member1Email').value.trim()
@@ -1170,6 +1216,7 @@ function submitForm() {
         member2: {
             name: document.getElementById('member2Name').value.trim(),
             rollNo: document.getElementById('member2RollNo').value.trim(),
+            contact: document.getElementById('member2Contact').value.trim(),
             department: document.getElementById('member2Department').value,
             year: document.getElementById('member2Year').value,
             email: document.getElementById('member2Email').value.trim()
@@ -1181,7 +1228,7 @@ function submitForm() {
     btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right: 8px;"></i> Processing...';
     btn.disabled = true;
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbwVG_PaNzmDGfmyXxNtBVbUhiL5UR01U5ufjzgF1TshekBUIbGPq7PdaBpVLQuMRDhKRg/exec';
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx-qwWBxBmFfZ_pn76pvO1qEtZE3AXUc5JByUNBfNFoWYFvpo4PuaUMVqPT3Yoya23ARQ/exec';
 
     // Modified fetch request
     fetch(scriptUrl, {
